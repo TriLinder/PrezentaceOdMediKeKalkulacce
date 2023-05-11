@@ -12,12 +12,13 @@ import 'reveal.js/plugin/highlight/monokai.css';
 export default {
     // App Config
     app: {
-        name: 'Reveal.js with Svelte and Vite',
+        name: 'Od hliníku ke kalkulačce',
     },
     // Reveal Config
     reveal: {
         plugins: [Highlight, Markdown, MathReveal.MathJax2, MathReveal.KaTeX, RevealNotes],
         hash: true,
+        progress: false,
       mathjax2: {
         config: 'TeX-AMS_HTML-full',
         TeX: {
