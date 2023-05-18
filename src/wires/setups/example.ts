@@ -8,6 +8,6 @@ export class ExampleWireSetup extends WireSetup {
     constructor() {
         super();
 
-        this.addComponent(new SwitchComponent(new Coordinates(25, 25), new Size(100, 100), false));
+        this.addComponent(new SwitchComponent(new Coordinates(0, 0), new Size(100, 100), false));
     }
 }

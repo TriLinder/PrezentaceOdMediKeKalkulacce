@@ -7,15 +7,29 @@
 
     onMount(function() {
         wireSetup.drawToCanvas(mainCanvas);
+
+        mainCanvas.addEventListener("mousedown", function(event) {
+            const rect = mainCanvas.getBoundingClientRect();
+            
+            const viewportX = event.clientX - rect.left;
+            const viewportY = event.clientY - rect.top;
+
+            wireSetup.handleViewportClick(viewportX, viewportY, mainCanvas);
+        })
     });
 
 </script>
 
 <style>
     canvas {
-        width: 100%;
-        height: 100%;
+        width: 125%;
+        height: auto;
         object-fit: contain;
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50% , -50%);
     }
 </style>
 
