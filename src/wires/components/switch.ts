@@ -1,7 +1,7 @@
 import { Component } from "./component";
 
-import { Coordinates } from "../types/coordinates";
-import { Size } from "../types/size";
+import type { Coordinates } from "../types/coordinates";
+import type { Size } from "../types/size";
 
 export class SwitchComponent extends Component {
     public state: boolean;

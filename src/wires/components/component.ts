@@ -1,5 +1,5 @@
-import { Coordinates } from "../types/coordinates";
-import { Size } from "../types/size";
+import type { Coordinates } from "../types/coordinates";
+import type { Size } from "../types/size";
 
 export class Component {
     public position: Coordinates;
