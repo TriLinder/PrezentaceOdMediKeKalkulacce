@@ -1,12 +1,12 @@
 <script lang="ts">
     import { onMount } from "svelte";
+    import type { WireSetup } from "../wires/setups/wire-setup";
 
+    export let wireSetup: WireSetup;
     let mainCanvas: HTMLCanvasElement;
 
     onMount(function() {
-        const ctx = mainCanvas.getContext("2d");
-        ctx.fillStyle = "blue";
-        ctx.fillRect(0, 0, mainCanvas.width, mainCanvas.height);
+        wireSetup.drawToCanvas(mainCanvas);
     });
 
 </script>

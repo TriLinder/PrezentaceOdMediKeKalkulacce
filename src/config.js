@@ -20,6 +20,7 @@ export default {
         hash: true,
         progress: false,
         maxScale: 100.0,
+        margin: 0,
       mathjax2: {
         config: 'TeX-AMS_HTML-full',
         TeX: {

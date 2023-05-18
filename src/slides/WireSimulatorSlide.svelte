@@ -1,5 +1,9 @@
-<script>
+<script lang="ts">
     import WireSimulator from "../lib/WireSimulator.svelte";
+
+    import { ExampleWireSetup } from "../wires/setups/example";
+
+    const wireSetup = new ExampleWireSetup();
 </script>
 
 <style>
@@ -13,5 +17,5 @@
 </style>
 
 <section>
-<WireSimulator/>
+<WireSimulator wireSetup={wireSetup} />
 </section>
