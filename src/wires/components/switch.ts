@@ -17,6 +17,11 @@ export class SwitchComponent extends Component {
         this.draw();
     }
 
+    public click() {
+        this.state = !this.state;
+        this.draw();
+    }
+
     private draw() {
         this.canvas = document.createElement("canvas");
 
@@ -25,16 +30,18 @@ export class SwitchComponent extends Component {
 
         const ctx = this.canvas.getContext("2d")!;
 
-        ctx.fillStyle = "white";
+        ctx.fillStyle = this.state ? "yellow" : "gray";
 
-        ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
-
-        //ctx.beginPath();
-        //ctx.arc(95,50,40,0,2*Math.PI);
-        //ctx.fill();
+        ctx.beginPath();
+        ctx.arc(this.canvas.width / 2, this.canvas.height / 2, (this.canvas.width / 2) - 1, 0, 2 * Math.PI);
+        ctx.fill();
     }
 
     public getCanvas(): HTMLCanvasElement {
         return this.canvas;
+    }
+
+    public getOutput(): boolean {
+        return this.state;
     }
 }

@@ -6,7 +6,9 @@
     let mainCanvas: HTMLCanvasElement;
 
     onMount(function() {
-        wireSetup.drawToCanvas(mainCanvas);
+        setInterval(function() {
+            wireSetup.drawToCanvas(mainCanvas);
+        }, 1000 / 30);
 
         mainCanvas.addEventListener("mousedown", function(event) {
             const rect = mainCanvas.getBoundingClientRect();
