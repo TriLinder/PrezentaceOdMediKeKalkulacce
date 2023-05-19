@@ -44,7 +44,7 @@ export class LampComponent extends Component {
         ctx.fillRect(0, 0, this.size.width, this.size.height);
     }
 
-    public getCanvas(): HTMLCanvasElement {
+    public getBitmap(): HTMLCanvasElement {
         return this.canvas;
     }
 

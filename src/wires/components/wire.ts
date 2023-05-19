@@ -57,7 +57,7 @@ export class WireComponent extends Component {
         ctx.stroke();
     }
 
-    public getCanvas(): HTMLCanvasElement {
+    public getBitmap(): HTMLCanvasElement {
         return this.canvas;
     }
 }

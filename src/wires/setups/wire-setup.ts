@@ -35,9 +35,9 @@ export class WireSetup {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
         this.components.forEach(function(component) {
-            const componentCanvas = component.getCanvas();
+            const componentBitmap = component.getBitmap();
 
-            ctx.drawImage(componentCanvas, component.position.x, component.position.y, component.size.width, component.size.height);
+            ctx.drawImage(componentBitmap, component.position.x, component.position.y, component.size.width, component.size.height);
         });
     }
 }

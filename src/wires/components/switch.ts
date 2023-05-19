@@ -53,7 +53,7 @@ export class SwitchComponent extends Component {
         ctx.fill();
     }
 
-    public getCanvas(): HTMLCanvasElement {
+    public getBitmap(): HTMLCanvasElement {
         return this.canvas;
     }
 

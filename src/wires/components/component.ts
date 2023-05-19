@@ -28,8 +28,8 @@ export class Component {
     
     }
 
-    public getCanvas(): HTMLCanvasElement {
-        return new HTMLCanvasElement();
+    public getBitmap(): HTMLCanvasElement | HTMLImageElement {
+        return new Image();
     }
 
     public getOutput(index: number): Power {
