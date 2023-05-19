@@ -1,6 +1,6 @@
 import { Component } from "./component";
 
-import type { Coordinates } from "../types/coordinates";
+import { Coordinates } from "../types/coordinates";
 import type { Size } from "../types/size";
 import type { Power } from "../types/power";
 
@@ -25,8 +25,8 @@ export class WireComponent extends Component {
 
         this.position = startPosition;
 
-        this.size.width = this.endPosition.x - this.startPosition.x;
-        this.size.height = this.endPosition.y - this.startPosition.y;
+        this.size.width = Math.max(this.endPosition.x - this.startPosition.x, this.width);
+        this.size.height = Math.max(this.endPosition.y - this.startPosition.y, this.width);
 
         this.canvas = document.createElement("canvas");
         
@@ -53,7 +53,7 @@ export class WireComponent extends Component {
         ctx.strokeStyle = this.isOn ? "yellow" : "gray";
 
         ctx.moveTo(0, 0);
-        ctx.lineTo(this.canvas.width, this.canvas.height);
+        ctx.lineTo(this.endPosition.x - this.startPosition.x, this.endPosition.y - this.startPosition.y);
         ctx.stroke();
     }
 
@@ -64,9 +64,11 @@ export class WireComponent extends Component {
     public getSnapPoint(name: string): Coordinates {
         switch (name) {
             case "start":
-                return this.startPosition;
+                return new Coordinates(this.startPosition.x, this.startPosition.y);
             case "end":
-                return this.endPosition;
+                return new Coordinates(this.endPosition.x, this.endPosition.y);
+            case "endCorner":
+                return new Coordinates(this.endPosition.x, this.endPosition.y + this.width / 2);
         }
     }
 }

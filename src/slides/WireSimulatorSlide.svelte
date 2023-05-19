@@ -1,9 +1,9 @@
 <script lang="ts">
     import WireSimulator from "../lib/WireSimulator.svelte";
 
-    import { ExampleWireSetup } from "../wires/setups/example";
+    import { LampSwitchCircuitSetup } from "../wires/setups/lamp-switch-circuit";
 
-    const wireSetup = new ExampleWireSetup();
+    const wireSetup = new LampSwitchCircuitSetup();
 </script>
 
 <style>

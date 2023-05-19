@@ -44,6 +44,10 @@ export class Component {
                 return new Coordinates(this.position.x + (this.size.width / 2), this.position.y + (this.size.height / 2));
             case "bottom":
                 return new Coordinates(this.position.x + (this.size.width / 2), this.position.y + this.size.height);
+            case "left":
+                return new Coordinates(this.position.x, this.position.y + (this.size.height / 2));
+            case "right":
+                return new Coordinates(this.position.x + this.size.width, this.position.y + (this.size.height / 2));
         }
     }
 }

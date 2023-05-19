@@ -10,7 +10,7 @@ export class SwitchComponent extends Component {
 
     private inputs: Power[];
 
-    constructor(position: Coordinates, size: Size, inputs: Power[], switched: boolean) {
+    constructor(position: Coordinates, size: Size, inputs: Power[], switched = false) {
         super();
 
         this.position = position;
