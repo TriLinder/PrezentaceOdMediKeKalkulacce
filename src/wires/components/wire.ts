@@ -60,4 +60,13 @@ export class WireComponent extends Component {
     public getBitmap(): HTMLCanvasElement {
         return this.canvas;
     }
+
+    public getSnapPoint(name: string): Coordinates {
+        switch (name) {
+            case "start":
+                return this.startPosition;
+            case "end":
+                return this.endPosition;
+        }
+    }
 }
