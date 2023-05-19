@@ -38,7 +38,12 @@ export class Component {
         return output;
     }
 
-    public getSnapPoint(index: number): Coordinates {
-        return new Coordinates(0, 0);
+    public getSnapPoint(name: string): Coordinates {
+        switch (name) {
+            case "center":
+                return new Coordinates(this.position.x + (this.size.width / 2), this.position.y + (this.size.height / 2));
+            case "bottom":
+                return new Coordinates(this.position.x + (this.size.width / 2), this.position.y + this.size.height);
+        }
     }
 }

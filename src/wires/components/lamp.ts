@@ -1,6 +1,6 @@
 import { Component } from "./component";
 
-import { Coordinates } from "../types/coordinates";
+import type { Coordinates } from "../types/coordinates";
 import type { Size } from "../types/size";
 import type { Power } from "../types/power";
 
@@ -32,15 +32,5 @@ export class LampComponent extends Component {
 
     public getBitmap(): HTMLImageElement {
         return this.images[Number(this.inputs[0].isOn)];
-    }
-
-    public getSnapPoint(index: number): Coordinates {
-        switch (index) {
-            case 0:
-                return new Coordinates(this.position.x + (this.size.width / 2), this.position.y + this.size.height);
-
-            default:
-                return this.position;
-        }
     }
 }
