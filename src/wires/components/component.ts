@@ -1,5 +1,5 @@
-import type { Coordinates } from "../types/coordinates";
-import type { Size } from "../types/size";
+import { Coordinates } from "../types/coordinates";
+import { Size } from "../types/size";
 import type { Power } from "../types/power";
 
 export class Component {
@@ -7,6 +7,11 @@ export class Component {
     public size: Size;
 
     public outputs: Power[];
+
+    constructor() {
+        this.position = new Coordinates(0, 0);
+        this.size = new Size(0, 0);
+    }
 
     public isIntersectingPoint(point: Coordinates): boolean {
         const intersectingX = point.x >= this.position.x && point.x <= this.position.x + this.size.width

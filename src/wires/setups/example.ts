@@ -1,7 +1,8 @@
 import { WireSetup } from "./wire-setup";
 
-import {SwitchComponent} from "../components/switch";
-import {LampComponent} from "../components/lamp";
+import { SwitchComponent } from "../components/switch";
+import { LampComponent } from "../components/lamp";
+import { WireComponent } from "../components/wire";
 
 import { Coordinates } from "../types/coordinates";
 import { Size } from "../types/size";
@@ -12,9 +13,11 @@ export class ExampleWireSetup extends WireSetup {
         super();
 
         const switchComponent = new SwitchComponent(new Coordinates(0, 0), new Size(100, 100), [new Power(true)], false);
-        const lampComponent = new LampComponent(new Coordinates(300, 300), new Size(100, 100), [switchComponent.getOutput(0)]);
+        const lampComponent = new LampComponent(new Coordinates(700, 300), new Size(100, 100), [switchComponent.getOutput(0)]);
+        const wireComponent = new WireComponent(new Coordinates(0, 0), new Coordinates(700, 300), 25, [switchComponent.getOutput(0)]);
 
         this.addComponent(switchComponent);
         this.addComponent(lampComponent);
+        this.addComponent(wireComponent);
     }
 }

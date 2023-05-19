@@ -19,12 +19,14 @@ export class LampComponent extends Component {
         this.inputs = inputs;
         this.isOn = false;
 
+        this.canvas = document.createElement("canvas");
+        
         this.draw();
     }
 
     public update() {
         const input = this.inputs[0];
-        
+
         if (input.isOn != this.isOn) {
             this.isOn = input.isOn;
             this.draw();
@@ -32,8 +34,6 @@ export class LampComponent extends Component {
     }
 
     private draw() {
-        this.canvas = document.createElement("canvas");
-
         this.canvas.width = this.size.width;
         this.canvas.height = this.size.height;
 
