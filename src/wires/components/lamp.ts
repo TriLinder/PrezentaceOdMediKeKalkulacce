@@ -5,10 +5,9 @@ import type { Size } from "../types/size";
 import type { Power } from "../types/power";
 
 export class LampComponent extends Component {
-    private canvas: HTMLCanvasElement;   
     private inputs: Power[];
 
-    private isOn: boolean;
+    private images: HTMLImageElement[];
 
     constructor(position: Coordinates, size: Size, inputs: Power[]) {
         super();
@@ -17,41 +16,28 @@ export class LampComponent extends Component {
         this.size = size;
 
         this.inputs = inputs;
-        this.isOn = false;
+        this.prepareImages();
+    }
 
-        this.canvas = document.createElement("canvas");
+
+    private prepareImages() {
+        const offImage = new Image();
+        offImage.src = "/assets/wire-simulator/lamp/off.png"
         
-        this.draw();
+        const onImage = new Image();
+        onImage.src = "/assets/wire-simulator/lamp/on.png";
+
+        this.images = [offImage, onImage];
     }
 
-    public update() {
-        const input = this.inputs[0];
-
-        if (input.isOn != this.isOn) {
-            this.isOn = input.isOn;
-            this.draw();
-        }
-    }
-
-    private draw() {
-        this.canvas.width = this.size.width;
-        this.canvas.height = this.size.height;
-
-        const ctx = this.canvas.getContext("2d")!;
-
-        ctx.fillStyle = this.isOn ? "yellow" : "gray";
-
-        ctx.fillRect(0, 0, this.size.width, this.size.height);
-    }
-
-    public getBitmap(): HTMLCanvasElement {
-        return this.canvas;
+    public getBitmap(): HTMLImageElement {
+        return this.images[Number(this.inputs[0].isOn)];
     }
 
     public getSnapPoint(index: number): Coordinates {
         switch (index) {
             case 0:
-                return new Coordinates(this.position.x + (this.size.width / 2), this.position.y + (this.size.height / 2));
+                return new Coordinates(this.position.x + (this.size.width / 2), this.position.y + this.size.height);
 
             default:
                 return this.position;
