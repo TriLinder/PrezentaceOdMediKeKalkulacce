@@ -7,14 +7,19 @@ import { Power } from "../types/power";
 export class SwitchComponent extends Component {
     public switched: boolean;
     private canvas: HTMLCanvasElement;
+    
+    private sound: HTMLAudioElement;
+    private playSound: boolean;
 
     private inputs: Power[];
 
-    constructor(position: Coordinates, size: Size, inputs: Power[], switched = false) {
+    constructor(position: Coordinates, size: Size, inputs: Power[], playSound = false, switched = false) {
         super();
 
         this.position = position;
         this.size = size;
+
+        this.playSound = playSound;
         this.switched = switched;
 
         this.inputs = inputs;
@@ -22,11 +27,22 @@ export class SwitchComponent extends Component {
 
         this.canvas = document.createElement("canvas");
 
+        this.prepareSound();
         this.draw();
+    }
+
+    private prepareSound() {
+        this.sound = new Audio();
+        this.sound.src = "/assets/wire-simulator/switch/sound.ogg"
     }
 
     public click() {
         this.switched = !this.switched;
+        
+        if (this.playSound) {
+            this.sound.currentTime = 0;
+            this.sound.play()
+        }
 
         this.draw();
     }

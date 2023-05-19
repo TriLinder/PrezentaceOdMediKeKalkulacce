@@ -14,8 +14,8 @@ export class LampSwitchSwitchCircuitSetup extends WireSetup {
 
         //Actual components
         const powerSourceComponent = new PowerSourceComponent(new Coordinates(3840 / 2 - 500 / 2, 2160 - 500), new Size(500, 500));
-        const rightSwitchComponent = new SwitchComponent(new Coordinates((3840 / 2 - 350 / 2) + 1000, 2160 / 2 - 350 / 2), new Size(350, 350), [powerSourceComponent.getOutput(0)]);
-        const leftSwitchComponent = new SwitchComponent(new Coordinates((3840 / 2 - 350 / 2) - 1000, 2160 / 2 - 350 / 2), new Size(350, 350), [rightSwitchComponent.getOutput(0)]);
+        const rightSwitchComponent = new SwitchComponent(new Coordinates((3840 / 2 - 350 / 2) + 1000, 2160 / 2 - 350 / 2), new Size(350, 350), [powerSourceComponent.getOutput(0)], true);
+        const leftSwitchComponent = new SwitchComponent(new Coordinates((3840 / 2 - 350 / 2) - 1000, 2160 / 2 - 350 / 2), new Size(350, 350), [rightSwitchComponent.getOutput(0)], true);
         const lampComponent = new LampComponent(new Coordinates(3840 / 2 - 500 / 2, 0), new Size(500, 500), [leftSwitchComponent.getOutput(0)]);
 
         //Wires
