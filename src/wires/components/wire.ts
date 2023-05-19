@@ -23,6 +23,8 @@ export class WireComponent extends Component {
         this.width = width
         this.inputs = inputs
 
+        this.position = startPosition;
+
         this.size.width = this.endPosition.x - this.startPosition.x;
         this.size.height = this.endPosition.y - this.startPosition.y;
 

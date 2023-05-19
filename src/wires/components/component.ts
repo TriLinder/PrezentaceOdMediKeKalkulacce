@@ -37,4 +37,8 @@ export class Component {
         
         return output;
     }
+
+    public getSnapPoint(index: number): Coordinates {
+        return new Coordinates(0, 0);
+    }
 }
