@@ -1,5 +1,6 @@
 import type { Coordinates } from "../types/coordinates";
 import type { Size } from "../types/size";
+import { Power } from "../types/power";
 
 export class Component {
     public position: Coordinates;
@@ -20,7 +21,7 @@ export class Component {
         return new HTMLCanvasElement();
     }
 
-    public getOutput(): boolean {
-        return false;
+    public getOutput(index: number): Power {
+        return new Power(false);
     }
 }

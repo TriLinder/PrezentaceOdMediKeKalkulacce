@@ -2,23 +2,31 @@ import { Component } from "./component";
 
 import type { Coordinates } from "../types/coordinates";
 import type { Size } from "../types/size";
+import { Power } from "../types/power";
 
 export class SwitchComponent extends Component {
-    public state: boolean;
+    public switched: boolean;
     private canvas: HTMLCanvasElement;
 
-    constructor(position: Coordinates, size: Size, state: boolean) {
+    private inputs: Power[];
+    private outputs: Power[];
+
+    constructor(position: Coordinates, size: Size, inputs: Power[], switched: boolean) {
         super();
 
         this.position = position;
         this.size = size;
-        this.state = state;
+        this.switched = switched;
+
+        this.inputs = inputs;
+        this.outputs = [new Power()];
 
         this.draw();
     }
 
     public click() {
-        this.state = !this.state;
+        this.switched = !this.switched;
+
         this.draw();
     }
 
@@ -30,7 +38,7 @@ export class SwitchComponent extends Component {
 
         const ctx = this.canvas.getContext("2d")!;
 
-        ctx.fillStyle = this.state ? "yellow" : "gray";
+        ctx.fillStyle = this.switched ? "yellow" : "gray";
 
         ctx.beginPath();
         ctx.arc(this.canvas.width / 2, this.canvas.height / 2, (this.canvas.width / 2) - 1, 0, 2 * Math.PI);
@@ -41,7 +49,12 @@ export class SwitchComponent extends Component {
         return this.canvas;
     }
 
-    public getOutput(): boolean {
-        return this.state;
+    public getOutput(index: number): Power {
+        const output = this.outputs[index];        
+        const input = this.inputs[index];
+
+        output.isOn = input.isOn && this.switched;
+        
+        return output;
     }
 }
