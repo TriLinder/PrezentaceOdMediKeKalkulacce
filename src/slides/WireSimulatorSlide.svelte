@@ -2,8 +2,9 @@
     import WireSimulator from "../lib/WireSimulator.svelte";
 
     import { LampSwitchCircuitSetup } from "../wires/setups/lamp-switch-circuit";
+    import { LampSwitchSwitchCircuitSetup } from "../wires/setups/lamp-switch-switch-circuit";
 
-    const wireSetup = new LampSwitchCircuitSetup();
+    const wireSetup = new LampSwitchSwitchCircuitSetup();
 </script>
 
 <style>
