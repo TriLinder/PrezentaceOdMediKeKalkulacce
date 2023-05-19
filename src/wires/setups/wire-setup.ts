@@ -23,6 +23,12 @@ export class WireSetup {
         });
     }
 
+    public update() {
+        this.components.forEach(function(component) {
+            component.update();
+        });
+    }
+
     public drawToCanvas(canvas: HTMLCanvasElement) {
         const ctx = canvas.getContext("2d")!;
 

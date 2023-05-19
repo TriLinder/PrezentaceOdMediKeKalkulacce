@@ -7,6 +7,7 @@
 
     onMount(function() {
         setInterval(function() {
+            wireSetup.update();
             wireSetup.drawToCanvas(mainCanvas);
         }, 1000 / 30);
 

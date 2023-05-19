@@ -1,10 +1,12 @@
 import type { Coordinates } from "../types/coordinates";
 import type { Size } from "../types/size";
-import { Power } from "../types/power";
+import type { Power } from "../types/power";
 
 export class Component {
     public position: Coordinates;
     public size: Size;
+
+    public outputs: Power[];
 
     public isIntersectingPoint(point: Coordinates): boolean {
         const intersectingX = point.x >= this.position.x && point.x <= this.position.x + this.size.width
@@ -17,11 +19,17 @@ export class Component {
     
     }
 
+    public update() {
+    
+    }
+
     public getCanvas(): HTMLCanvasElement {
         return new HTMLCanvasElement();
     }
 
     public getOutput(index: number): Power {
-        return new Power(false);
+        const output = this.outputs[index];
+        
+        return output;
     }
 }

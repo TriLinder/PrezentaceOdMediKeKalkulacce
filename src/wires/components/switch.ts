@@ -9,7 +9,6 @@ export class SwitchComponent extends Component {
     private canvas: HTMLCanvasElement;
 
     private inputs: Power[];
-    private outputs: Power[];
 
     constructor(position: Coordinates, size: Size, inputs: Power[], switched: boolean) {
         super();
@@ -21,6 +20,8 @@ export class SwitchComponent extends Component {
         this.inputs = inputs;
         this.outputs = [new Power()];
 
+        this.canvas = document.createElement("canvas");
+
         this.draw();
     }
 
@@ -30,15 +31,22 @@ export class SwitchComponent extends Component {
         this.draw();
     }
 
-    private draw() {
-        this.canvas = document.createElement("canvas");
+    public update() {
+        const output = this.outputs[0];        
+        const input = this.inputs[0];
 
+        output.isOn = input.isOn && this.switched;
+    }
+
+    private draw() {
         this.canvas.width = this.size.width;
         this.canvas.height = this.size.height;
 
         const ctx = this.canvas.getContext("2d")!;
 
         ctx.fillStyle = this.switched ? "yellow" : "gray";
+
+        ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
         ctx.beginPath();
         ctx.arc(this.canvas.width / 2, this.canvas.height / 2, (this.canvas.width / 2) - 1, 0, 2 * Math.PI);
@@ -47,14 +55,5 @@ export class SwitchComponent extends Component {
 
     public getCanvas(): HTMLCanvasElement {
         return this.canvas;
-    }
-
-    public getOutput(index: number): Power {
-        const output = this.outputs[index];        
-        const input = this.inputs[index];
-
-        output.isOn = input.isOn && this.switched;
-        
-        return output;
     }
 }
