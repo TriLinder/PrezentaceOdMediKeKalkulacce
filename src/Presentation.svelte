@@ -1,9 +1,10 @@
 <script>
-    import Blank from './slides/Blank.svelte';
-    import Title from './slides/Title.svelte';
-    import WireSimulatorSlide from './slides/WireSimulatorSlide.svelte';
+    import Blank from './slides/general/Blank.svelte';
+    import H2Slide from './slides/general/H2Slide.svelte';
+    import Expectations from './slides/expectations/Expectations.svelte';
 </script>
 
 <Blank/>
-<Title/>
-<WireSimulatorSlide/>
+<H2Slide content={"Od hliníku ke kalkulačce"} notes={'Dobrý den, a vítejte k mé prezentaci s názvem "Od hliníku ke kalkulačce".'}/>
+
+<Expectations/>
