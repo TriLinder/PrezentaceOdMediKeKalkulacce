@@ -1,11 +1,8 @@
 <script lang="ts">
     import WireSimulator from "../lib/WireSimulator.svelte";
+    import type { WireSetup } from "src/wires/setups/wire-setup";
 
-    import { LampSwitchCircuitSetup } from "../wires/setups/lamp-switch-circuit";
-    import { LampSwitchSwitchCircuitSetup } from "../wires/setups/lamp-switch-switch-circuit";
-    import { NotGateIntroductionSetup } from "../wires/setups/not-gate-introduction";
-
-    const wireSetup = new NotGateIntroductionSetup();
+    export let wireSetup: WireSetup;
 </script>
 
 <style>
@@ -19,5 +16,5 @@
 </style>
 
 <section>
-<WireSimulator wireSetup={wireSetup} />
+    <WireSimulator wireSetup={wireSetup} />
 </section>
