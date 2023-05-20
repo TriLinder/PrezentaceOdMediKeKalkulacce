@@ -7,10 +7,14 @@
 
     onMount(function() {
         setInterval(function() {
-            wireSetup.update();
-            wireSetup.drawToCanvas(mainCanvas);
+            // Update only when the canvas can be interacted with
+            if (getComputedStyle(mainCanvas).pointerEvents == "auto") {
+                wireSetup.update();
+                wireSetup.drawToCanvas(mainCanvas);
+            }
         }, 1000 / 30);
 
+        // On click
         mainCanvas.addEventListener("mousedown", function(event) {
             const rect = mainCanvas.getBoundingClientRect();
             
