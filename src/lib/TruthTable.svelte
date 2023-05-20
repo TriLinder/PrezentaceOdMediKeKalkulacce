@@ -1,4 +1,5 @@
 <script>
+    export let type = "dual";
     export let truthFunction;
 </script>
 
@@ -24,20 +25,36 @@
     }
 </style>
 
-<table>
-    <tr>
-        <th>A</th><th>B</th><th>VÝSTUP</th>
-    </tr>
-    <tr>
-        <td class="false">0</td> <td class="false">0</td> <td class={String(truthFunction(false, false))}>{Number(truthFunction(false, false))}</td>
-    </tr>
-    <tr>
-        <td class="false">0</td> <td class="true">1</td> <td class={String(truthFunction(false, true))}>{Number(truthFunction(false, true))}</td>
-    </tr>
-    <tr>
-        <td class="true">1</td> <td class="false">0</td> <td class={String(truthFunction(true, false))}>{Number(truthFunction(true, false))}</td>
-    </tr>
-    <tr>
-        <td class="true">1</td> <td class="true">1</td> <td class={String(truthFunction(true, true))}>{Number(truthFunction(true, true))}</td>
-    </tr>
-</table>
+{#if type == "dual"}
+    <table>
+        <tr>
+            <th>A</th><th>B</th><th>VÝSTUP</th>
+        </tr>
+        <tr>
+            <td class="false">0</td> <td class="false">0</td> <td class={String(truthFunction(false, false))}>{Number(truthFunction(false, false))}</td>
+        </tr>
+        <tr>
+            <td class="false">0</td> <td class="true">1</td> <td class={String(truthFunction(false, true))}>{Number(truthFunction(false, true))}</td>
+        </tr>
+        <tr>
+            <td class="true">1</td> <td class="false">0</td> <td class={String(truthFunction(true, false))}>{Number(truthFunction(true, false))}</td>
+        </tr>
+        <tr>
+            <td class="true">1</td> <td class="true">1</td> <td class={String(truthFunction(true, true))}>{Number(truthFunction(true, true))}</td>
+        </tr>
+    </table>
+{/if}
+
+{#if type == "single"}
+    <table>
+        <tr>
+            <th>A</th><th>VÝSTUP</th>
+        </tr>
+        <tr>
+            <td class="false">0</td> <td class={String(truthFunction(false))}>{Number(truthFunction(false))}</td>
+        </tr>
+        <tr>
+            <td class="true">1</td> <td class={String(truthFunction(true))}>{Number(truthFunction(true))}</td>
+        </tr>
+    </table>
+{/if}

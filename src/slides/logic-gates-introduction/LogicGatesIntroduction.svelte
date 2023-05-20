@@ -1,9 +1,10 @@
 <script>
     import WireSimulatorSlide from "../general/WireSimulatorSlide.svelte";
-    import AndGateTruthTableSlide from "./AndGateTruthTableSlide.svelte";
+    import TruthTableSlide from "../general/TruthTableSlide.svelte";
 
     import { LampSwitchCircuitSetup } from "../../wires/setups/lamp-switch-circuit";
     import { LampSwitchSwitchCircuitSetup } from "../../wires/setups/lamp-switch-switch-circuit";
+    import { NotGateIntroductionSetup } from "../../wires/setups/not-gate-introduction";
 </script>
 
 <WireSimulatorSlide wireSetup={new LampSwitchCircuitSetup()} notes={`Zde máme jednoduchý obvod, skládající se z lithium-ionové baterky, 
@@ -16,4 +17,17 @@
                                                                             zkontrolovat zda dvě podmínky platí (jestli je přepínač A i přepínač B přepnutý) 
                                                                             a podle toho rozsvítit tuto lampu.`}/>
 
-<AndGateTruthTableSlide/>
+<TruthTableSlide gateName="AND" truthFunction={function(A, B) {return A && B}} notes={`Když zapíšeme vypnutý stav jako číslici 0 a 
+                                                                                        zapnutý stav jako číslici 1, dostaneme tuto tabulku,
+                                                                                        kde spínače jsou sloupce A a B a výstup je stav lampy.
+                                                                                        Protože výstup je zapnutý pouze pokud jsou
+                                                                                        vstupy A a B 1, tak je pojmenovaný podle
+                                                                                        anglického slovíčka "AND", neboli přeloženě "A".`}/>
+
+<WireSimulatorSlide wireSetup={new NotGateIntroductionSetup()} notes={`Pojdmě se tedy podívat na další takovýto obvod.
+                                                                        Tady lampa svítí, dokud nepřepnu přepínač.
+                                                                        V ten moment přepne mají elektrony lehčí
+                                                                        průchod tudy a tak lampa zhasne.`}/>
+
+<TruthTableSlide gateName="NOT" type={"single"} truthFunction={function(A) {return !A}} notes={`A takto vypadá tabulka pro tento obvod.
+                                                                                                Když vstup je 0 tak výstup je 1 a napoak.`}/>
