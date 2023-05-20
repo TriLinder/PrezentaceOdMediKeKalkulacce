@@ -31,6 +31,7 @@
                                                                         průchod tudy a tak lampa zhasne.`}/>
 
 <TruthTableSlide gateName="NOT" type={"single"} truthFunction={function(A) {return !A}} notes={`A takto vypadá tabulka pro tento obvod.
-                                                                                                Když vstup je 0 tak výstup je 1 a napoak.`}/>
+                                                                                                Když vstup je 0 tak výstup je 1 a napoak.
+                                                                                                Proto se nazývá "NOT", anglicky "NE".`}/>
 
 <WireSimulatorSlide wireSetup={new SimpleNotGateIntroductionSetup()}/>
