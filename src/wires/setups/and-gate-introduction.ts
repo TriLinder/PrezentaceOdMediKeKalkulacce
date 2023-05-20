@@ -8,7 +8,7 @@ import { WireComponent } from "../components/wire";
 import { Coordinates } from "../types/coordinates";
 import { Size } from "../types/size";
 
-export class LampSwitchSwitchCircuitSetup extends WireSetup {
+export class AndGateIntroductionSetup extends WireSetup {
     constructor() {
         super();
 

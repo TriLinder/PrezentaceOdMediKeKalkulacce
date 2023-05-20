@@ -3,7 +3,7 @@
     import TruthTableSlide from "../general/TruthTableSlide.svelte";
 
     import { LampSwitchCircuitSetup } from "../../wires/setups/lamp-switch-circuit";
-    import { LampSwitchSwitchCircuitSetup } from "../../wires/setups/lamp-switch-switch-circuit";
+    import { AndGateIntroductionSetup } from "../../wires/setups/and-gate-introduction";
     import { NotGateIntroductionSetup } from "../../wires/setups/not-gate-introduction";
     import { SimpleNotGateIntroductionSetup } from "../../wires/setups/simple-not-gate-introduction";
 </script>
@@ -12,7 +12,7 @@
                                                                     lampy, přepínače a drátů. Jak se dá očekávat, když stiskenme přepínač, 
                                                                     obvod se uzavře a lampa se rozsvítí.`}/>
 
-<WireSimulatorSlide wireSetup={new LampSwitchSwitchCircuitSetup()} notes={`Podjmě tedy přejít na trochu komplikovanější obvod.
+<WireSimulatorSlide wireSetup={new AndGateIntroductionSetup()} notes={`Podjmě tedy přejít na trochu komplikovanější obvod.
                                                                             Zde musíme zapnout oba přepínače, aby se lampa rozsvítila. 
                                                                             I když tento obvod možná nevypadá příliš zajímavě, tak dokáže
                                                                             zkontrolovat zda dvě podmínky platí (jestli je přepínač A i přepínač B přepnutý) 
