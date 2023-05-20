@@ -7,6 +7,8 @@
     import { AndGateIntroductionSetup } from "../../wires/setups/and-gate-introduction";
     import { NotGateIntroductionSetup } from "../../wires/setups/not-gate-introduction";
     import { BlockNotGateIntroductionSetup } from "../../wires/setups/block-not-gate-introduction";
+    import { NandGateIntroductionSetup } from "../../wires/setups/nand-gate-introduction";
+    import notes from "reveal.js/plugin/notes/notes";
 </script>
 
 <WireSimulatorSlide wireSetup={new LampSwitchCircuitSetup()} notes={`Zde máme jednoduchý obvod, skládající se z lithium-ionové baterky, 
@@ -43,3 +45,13 @@
                                                                             vstup, takže když přepínač zapnu, lampa zhasne a naopak.`}/>
 
 <H2Slide content="ZKOMBINOVAT?" notes={`Zatím tedy známe dvě hradla: AND a NOT. Ale co je zkombinovat?`}/>
+
+<WireSimulatorSlide wireSetup={new NandGateIntroductionSetup()} notes={`Postavily jsme takto tedy NOT hradlo za AND hradlo.
+                                                                        Teď lampa svítí, dokud nejsou oba spínače zapnuty,
+                                                                        a v ten moment znovu zhasne. Jakmile je jeden
+                                                                        spínač zapnutý, tak zase svítí.`}/>
+
+<TruthTableSlide gateName="NAND" truthFunction={function(A, B) {return !(A && B)}} notes={`Takto vypadá tabulka pro toto nové hradlo.
+                                                                                            Výstup je 1, pokud je alespoň jeden ze
+                                                                                            vstupů 0. Toto hradlo je doslova pojmenováno
+                                                                                            NOT-AND, neboli zkráceně NAND.`}/>
