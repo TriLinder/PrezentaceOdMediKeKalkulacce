@@ -1,27 +1,20 @@
-import { Component } from "./component";
+import { BoxComponent } from "./box-component";
 
 import type { Coordinates } from "../types/coordinates";
 import type { Size } from "../types/size";
 import { Power } from "../types/power";
 
-export class NotGateComponent extends Component {
-    private inputs: Power[];
-    
-    private visible: boolean;
-    private image: HTMLImageElement;
-
-    constructor(position: Coordinates, size: Size, inputs: Power[], visible = true) {
+export class NotGateComponent extends BoxComponent {
+    constructor(position: Coordinates, size: Size, inputs: Power[]) {
         super();
 
         this.position = position;
         this.size = size;
 
         this.inputs = inputs;
-        this.visible = visible;
-
-        this.image = new Image();
-
         this.outputs = [new Power()];
+
+        this.draw("NOT", "#f73d40");
     }
 
     public update(): void {
@@ -31,7 +24,7 @@ export class NotGateComponent extends Component {
         output.isOn = !input.isOn;
     }
 
-    public getBitmap(): HTMLImageElement {
-        return this.image;
+    public getBitmap(): HTMLCanvasElement{
+        return this.canvas;
     }
 }

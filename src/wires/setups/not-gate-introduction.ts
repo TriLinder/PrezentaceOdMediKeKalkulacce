@@ -16,7 +16,7 @@ export class NotGateIntroductionSetup extends WireSetup {
         //Actual components
         const powerSourceComponent = new PowerSourceComponent(new Coordinates(3840 / 2 - 500 / 2, 2160 - 500), new Size(500, 500));
         const switchComponent = new SwitchComponent(new Coordinates(3840 / 2 - 350 / 2, 2160 / 2 - 350 / 2), new Size(350, 350), [powerSourceComponent.getOutput(0)], true);
-        const notGateComponent = new NotGateComponent(new Coordinates(0, 0), new Size(0, 0), [switchComponent.getOutput(0)], false);
+        const notGateComponent = new NotGateComponent(new Coordinates(-1000, 0), new Size(100, 100), [switchComponent.getOutput(0)]);
         const lampComponent = new LampComponent(new Coordinates(3840 / 2 - 500 / 2, 0), new Size(500, 500), [notGateComponent.getOutput(0)]);
 
         //Wires

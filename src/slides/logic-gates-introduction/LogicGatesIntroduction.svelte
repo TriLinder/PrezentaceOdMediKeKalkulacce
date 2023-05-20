@@ -5,6 +5,7 @@
     import { LampSwitchCircuitSetup } from "../../wires/setups/lamp-switch-circuit";
     import { LampSwitchSwitchCircuitSetup } from "../../wires/setups/lamp-switch-switch-circuit";
     import { NotGateIntroductionSetup } from "../../wires/setups/not-gate-introduction";
+    import { SimpleNotGateIntroductionSetup } from "../../wires/setups/simple-not-gate-introduction";
 </script>
 
 <WireSimulatorSlide wireSetup={new LampSwitchCircuitSetup()} notes={`Zde máme jednoduchý obvod, skládající se z lithium-ionové baterky, 
@@ -31,3 +32,5 @@
 
 <TruthTableSlide gateName="NOT" type={"single"} truthFunction={function(A) {return !A}} notes={`A takto vypadá tabulka pro tento obvod.
                                                                                                 Když vstup je 0 tak výstup je 1 a napoak.`}/>
+
+<WireSimulatorSlide wireSetup={new SimpleNotGateIntroductionSetup()}/>
