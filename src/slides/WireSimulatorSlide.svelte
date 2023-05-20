@@ -3,8 +3,9 @@
 
     import { LampSwitchCircuitSetup } from "../wires/setups/lamp-switch-circuit";
     import { LampSwitchSwitchCircuitSetup } from "../wires/setups/lamp-switch-switch-circuit";
+    import { NotGateIntroductionSetup } from "../wires/setups/not-gate-introduction";
 
-    const wireSetup = new LampSwitchSwitchCircuitSetup();
+    const wireSetup = new NotGateIntroductionSetup();
 </script>
 
 <style>
