@@ -29,11 +29,13 @@ export class NandGateIntroductionSetup extends WireSetup {
 
         const notGateToLampWire = new WireComponent(notGateComponent.getSnapPoint("output0"), new Coordinates(3300, 1080), 50, [notGateComponent.getOutput(0)]);
 
+        //Add the wires first, so they're in the background
         this.addComponent(upperSwitchToAndGateWire);
         this.addComponent(lowerSwitchToAndGateWire);
         this.addComponent(andGateToNotGateWire);
         this.addComponent(notGateToLampWire);
 
+        //Now add the actual components
         this.addComponent(upperSwitchComponent);
         this.addComponent(lowerSwitchComponent);
         this.addComponent(andGateComponent);

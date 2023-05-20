@@ -8,7 +8,7 @@
     import { NotGateIntroductionSetup } from "../../wires/setups/not-gate-introduction";
     import { BlockNotGateIntroductionSetup } from "../../wires/setups/block-not-gate-introduction";
     import { NandGateIntroductionSetup } from "../../wires/setups/nand-gate-introduction";
-    import notes from "reveal.js/plugin/notes/notes";
+    import { OrGateIntroductionSetup } from "../../wires/setups/or-gate-introduction";
 </script>
 
 <WireSimulatorSlide wireSetup={new LampSwitchCircuitSetup()} notes={`Zde máme jednoduchý obvod, skládající se z lithium-ionové baterky, 
@@ -54,4 +54,15 @@
 <TruthTableSlide gateName="NAND" truthFunction={function(A, B) {return !(A && B)}} notes={`Takto vypadá tabulka pro toto nové hradlo.
                                                                                             Výstup je 1, pokud je alespoň jeden ze
                                                                                             vstupů 0. Toto hradlo je doslova pojmenováno
-                                                                                            NOT-AND, neboli zkráceně NAND.`}/>
+                                                                                            NOT-AND, neboli zkráceně NAND. Podjmě dále kombinovat.`}/>
+
+<WireSimulatorSlide wireSetup={new OrGateIntroductionSetup()} notes={`Když postavíme nové NAND hradlo za dvoje NOT hradla, lampa nebude svítit
+                                                                        do doby, než se jakýkoliv spínač sepne. Zdůrazňuji rozdíl od AND
+                                                                        hradla v tom, že stačí aby jediný spínač byl sepnut. Lampa ale svítí
+                                                                        i když jsou sepnuty oba.`}/>
+
+<TruthTableSlide gateName="OR" truthFunction={function(A, B) {return A || B}} notes={`Když sestavíme pro toto nové hradlo tabulku,
+                                                                                        bude vypadat takto. Výstup je tedy 0 pouze pokud
+                                                                                        jsou oba vstupy také 0. Jelikož stačí aby byl jenom jeden vstup
+                                                                                        A NEBO B 1, bylo toto hradlo pojmenováno "OR",
+                                                                                        což přeloženo z angličtiny znamená "NEBO".`}/>
