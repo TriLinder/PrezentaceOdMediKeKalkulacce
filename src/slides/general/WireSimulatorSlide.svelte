@@ -1,8 +1,9 @@
 <script lang="ts">
-    import WireSimulator from "../lib/WireSimulator.svelte";
+    import WireSimulator from "../../lib/WireSimulator.svelte";
     import type { WireSetup } from "src/wires/setups/wire-setup";
 
     export let wireSetup: WireSetup;
+    export let notes = "";
 </script>
 
 <style>
@@ -17,4 +18,8 @@
 
 <section>
     <WireSimulator wireSetup={wireSetup} />
+
+    <aside class="notes">
+        {notes}
+    </aside>
 </section>

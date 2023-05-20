@@ -30,6 +30,16 @@
     </div>
 
     <aside class="notes">
-        k, byť primitivnímu, ale i tak skutečnému základnímu počítači
+        k, byť primitivnímu, ale i tak skutečnému základnímu počítači.
+    </aside>
+</section>
+
+<section data-auto-animate>
+    <h2>Logické stroje</h2>
+
+    <img src="assets/images/macbook.jpg" style="height: 45vh;" class="r-frame" alt="Notebook na stole">
+
+    <aside class="notes">
+        Ale jak je možné z normálních drátů udělat stroj, který umí počítat a zpracovávat informace?
     </aside>
 </section>
