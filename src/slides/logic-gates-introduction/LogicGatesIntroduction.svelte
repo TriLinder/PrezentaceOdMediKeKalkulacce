@@ -1,11 +1,12 @@
 <script>
     import WireSimulatorSlide from "../general/WireSimulatorSlide.svelte";
     import TruthTableSlide from "../general/TruthTableSlide.svelte";
+    import H2Slide from "../general/H2Slide.svelte";
 
     import { LampSwitchCircuitSetup } from "../../wires/setups/lamp-switch-circuit";
     import { AndGateIntroductionSetup } from "../../wires/setups/and-gate-introduction";
     import { NotGateIntroductionSetup } from "../../wires/setups/not-gate-introduction";
-    import { SimpleNotGateIntroductionSetup } from "../../wires/setups/simple-not-gate-introduction";
+    import { BlockNotGateIntroductionSetup } from "../../wires/setups/block-not-gate-introduction";
 </script>
 
 <WireSimulatorSlide wireSetup={new LampSwitchCircuitSetup()} notes={`Zde máme jednoduchý obvod, skládající se z lithium-ionové baterky, 
@@ -27,11 +28,18 @@
 
 <WireSimulatorSlide wireSetup={new NotGateIntroductionSetup()} notes={`Pojdmě se tedy podívat na další takovýto obvod.
                                                                         Tady lampa svítí, dokud nepřepnu přepínač.
-                                                                        V ten moment přepne mají elektrony lehčí
+                                                                        V ten moment mají elektrony lehčí
                                                                         průchod tudy a tak lampa zhasne.`}/>
 
 <TruthTableSlide gateName="NOT" type={"single"} truthFunction={function(A) {return !A}} notes={`A takto vypadá tabulka pro tento obvod.
                                                                                                 Když vstup je 0 tak výstup je 1 a napoak.
                                                                                                 Proto se nazývá "NOT", anglicky "NE".`}/>
 
-<WireSimulatorSlide wireSetup={new SimpleNotGateIntroductionSetup()}/>
+<H2Slide content={"HRADLA"} notes={`Teď když známe funkce AND a NOT obvodů, můžeme z
+                                    nich udělat zjednodušené samostatné součástky,
+                                    nazývané hradla, které můžeme použít v našich obvodech..`}/>
+
+<WireSimulatorSlide wireSetup={new BlockNotGateIntroductionSetup()} notes={`.. jako je tento. Jako předtím, toto NOT hradlo invertuje
+                                                                            vstup, takže když přepínač zapnu, lampa zhasne a naopak.`}/>
+
+<H2Slide content="ZKOMBINOVAT?" notes={`Zatím tedy známe dvě hradla: AND a NOT. Ale co je zkombinovat?`}/>
