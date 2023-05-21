@@ -4,6 +4,7 @@
     import Expectations from './slides/expectations/Expectations.svelte';
     import LogicGatesIntroduction from './slides/logic-gates-introduction/LogicGatesIntroduction.svelte';
     import Counting from './slides/counting/Counting.svelte';
+    import Adders from './slides/adders/Adders.svelte';
 </script>
 
 <Blank/>
@@ -12,3 +13,4 @@
 <Expectations/>
 <LogicGatesIntroduction/>
 <Counting/>
+<Adders/>
