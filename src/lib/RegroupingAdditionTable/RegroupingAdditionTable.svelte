@@ -22,7 +22,7 @@
         let carry = 0;
 
         for (let digitIndex = numberOfDigits - 1; digitIndex >= 0; digitIndex--) {
-            carryRowString = `${carry}` + carryRowString;
+            carryRowString = String(carry) + carryRowString;
 
             const digitSum = carry + Number(paddedFirstNumber[digitIndex]) + Number(paddedSecondNumber[digitIndex]);
 
@@ -32,6 +32,10 @@
             else {
                 carry = 0;
             }
+        }
+
+        if (carry != 0) {
+            carryRowString = String(carry) + carryRowString;
         }
 
         return carryRowString;

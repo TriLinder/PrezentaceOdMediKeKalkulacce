@@ -2,7 +2,7 @@
     import H2Slide from "../general/H2Slide.svelte";
     import HowDoYouCount from "./HowDoYouCount.svelte";
     import CounterSlide from "../general/CounterSlide.svelte";
-    import RegroupingAdditionTable from "../../lib/RegroupingAdditionTable/RegroupingAdditionTable.svelte";
+    import CountingAddition from "./CountingAddition.svelte";
 </script>
 
 <H2Slide content={"KALKULAČKA?"} notes={`Je čas si dát na chvilku přestávku od nekonečného skládání součástek a
@@ -27,4 +27,6 @@
     Jenom místo desíti číslic pro jednu cifru máme jenom dvě.`}/>
 
 <H2Slide content={"SČÍTÁNÍ"} notes={`
-    Ale jak teda sečíst dvě čísla?`}/>
+    Podjmě si tedy ukázat jak sečíst dvě čísla.`}/>
+
+<CountingAddition/>
