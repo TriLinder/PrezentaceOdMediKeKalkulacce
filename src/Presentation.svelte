@@ -3,6 +3,7 @@
     import H2Slide from './slides/general/H2Slide.svelte';
     import Expectations from './slides/expectations/Expectations.svelte';
     import LogicGatesIntroduction from './slides/logic-gates-introduction/LogicGatesIntroduction.svelte';
+    import Counting from './slides/counting/Counting.svelte';
 </script>
 
 <Blank/>
@@ -10,3 +11,4 @@
 
 <Expectations/>
 <LogicGatesIntroduction/>
+<Counting/>
