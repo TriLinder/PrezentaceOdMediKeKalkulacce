@@ -3,6 +3,7 @@
     import HowDoYouCount from "./HowDoYouCount.svelte";
     import CounterSlide from "../general/CounterSlide.svelte";
     import CountingAddition from "./CountingAddition.svelte";
+    import CountingLogicGates from "./CountingLogicGates.svelte";
 </script>
 
 <H2Slide content={"KALKULAČKA?"} notes={`Je čas si dát na chvilku přestávku od nekonečného skládání součástek a
@@ -30,3 +31,5 @@
     Podjmě si tedy ukázat jak sečíst dvě čísla.`}/>
 
 <CountingAddition/>
+
+<CountingLogicGates/>
