@@ -7,6 +7,7 @@ import { AndGateComponent } from "../components/and-gate";
 import { SwitchComponent } from "../components/switch";
 import { LampComponent } from "../components/lamp";
 import { WireComponent } from "../components/wire";
+import { LabelComponent } from "../components/label-component";
 
 import { Coordinates } from "../types/coordinates";
 import { Size } from "../types/size";
@@ -35,6 +36,13 @@ export class TwoBitAdderSetup extends WireSetup {
         const xorGateToSumOutputWire = new WireComponent(xorGateComponent.getSnapPoint("output0"), sumOutputComponent.getSnapPoint("left"), 25, [xorGateComponent.getOutput(0)]);
         const andGateToCarryOutputWire = new WireComponent(andGateComponent.getSnapPoint("output0"), carryOutputComponent.getSnapPoint("left"), 25, [andGateComponent.getOutput(0)]);
 
+        //Labels
+        const inputALabel = new LabelComponent(new Coordinates(inputAComponent.getSnapPoint("left").x + 25, (inputAComponent.getSnapPoint("center").y) - 220), " A ", 120);
+        const inputBLabel = new LabelComponent(new Coordinates(inputBComponent.getSnapPoint("left").x + 25, (inputBComponent.getSnapPoint("center").y) - 220), " B ", 120);
+
+        const sumOutputLabel = new LabelComponent(new Coordinates(sumOutputComponent.getSnapPoint("left").x + 25, (sumOutputComponent.getSnapPoint("center").y) - 220), " + ", 120);
+        const carryOutputLabel = new LabelComponent(new Coordinates(carryOutputComponent.getSnapPoint("left").x + 25, (carryOutputComponent.getSnapPoint("center").y) - 220), " ↪ ", 120);
+
         //Add the wires first, so they're in the background
         this.addComponent(inputAToXorGateWire);
         this.addComponent(inputBToXorGateWire);
@@ -50,5 +58,11 @@ export class TwoBitAdderSetup extends WireSetup {
         this.addComponent(andGateComponent);
         this.addComponent(sumOutputComponent);
         this.addComponent(carryOutputComponent);
+
+        //Add labels last
+        this.addComponent(inputALabel);
+        this.addComponent(inputBLabel);
+        this.addComponent(sumOutputLabel);
+        this.addComponent(carryOutputLabel);
     }
 }
