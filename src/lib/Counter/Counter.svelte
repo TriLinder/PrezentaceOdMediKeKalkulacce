@@ -16,6 +16,7 @@
         if (getComputedStyle(counterDiv).pointerEvents == "auto") {
             if (shouldPlaySound) {
                 audio.currentTime = 0;
+                audio.volume = 0.25;
                 audio.play();
             }
             
