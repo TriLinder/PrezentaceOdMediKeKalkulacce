@@ -9,6 +9,7 @@
     import { BlockNotGateIntroductionSetup } from "../../wires/setups/block-not-gate-introduction";
     import { NandGateIntroductionSetup } from "../../wires/setups/nand-gate-introduction";
     import { OrGateIntroductionSetup } from "../../wires/setups/or-gate-introduction";
+    import { XorGateIntroductionSetup } from "../../wires/setups/xor-gate-introduction";
 </script>
 
 <WireSimulatorSlide wireSetup={new LampSwitchCircuitSetup()} notes={`Zde máme jednoduchý obvod, skládající se z lithium-ionové baterky, 
@@ -49,7 +50,7 @@
 <WireSimulatorSlide wireSetup={new NandGateIntroductionSetup()} notes={`Postavily jsme takto tedy NOT hradlo za AND hradlo.
                                                                         Teď lampa svítí, dokud nejsou oba spínače zapnuty,
                                                                         a v ten moment znovu zhasne. Jakmile je jeden
-                                                                        spínač zapnutý, tak zase svítí.`}/>
+                                                                        spínač vypnutý, tak zase svítí.`}/>
 
 <TruthTableSlide gateName="NAND" truthFunction={function(A, B) {return !(A && B)}} notes={`Takto vypadá tabulka pro toto nové hradlo.
                                                                                             Výstup je 1, pokud je alespoň jeden ze
@@ -66,3 +67,16 @@
                                                                                         jsou oba vstupy také 0. Jelikož stačí aby byl jenom jeden vstup
                                                                                         A NEBO B 1, bylo toto hradlo pojmenováno "OR",
                                                                                         což přeloženo z angličtiny znamená "NEBO".`}/>
+
+<H2Slide content={"JEŠTĚ JEDNO HRADLO.."} notes={`Pojdmě si tedy vytvořit ještě jedno poslední hradlo.`}/>
+
+<WireSimulatorSlide wireSetup={new XorGateIntroductionSetup()} notes={`Takto bude vypadat naše poslední nové hradlo. Toto spojení
+                                                                        OR, NAND, a AND hradel způsobí, že lampa bude svítit, pouze
+                                                                        pokud je jeden ze spínačů, ale ne oba, sepnut. Dám Vám chvilku
+                                                                        se podívat na tento obvod, ať si můžete zkontrolovat své
+                                                                        porozumění hradel a proč se toto spojení takto chová.`}/>
+
+<TruthTableSlide gateName="EXCLUSIVE OR (XOR)" truthFunction={function(A, B) {return A != B}} notes={`Protože výstup je 1 pouze pokud
+                                                                                                        je vstup A nebo vstup B exkluzivně
+                                                                                                        zapnut, nazývá se anglicky "EXCLUSIVE OR",
+                                                                                                        neboli zkráceně: "XOR".`}/>
