@@ -7,6 +7,11 @@
   src: url("/assets/fonts/IBMPlexMono-Regular.ttf");
 }
 
+@font-face {
+  font-family: Segment;
+  src: url("/assets/fonts/Segment7Standard.otf");
+}
+
 #app {
   width: 100%;
   margin: 0 auto;

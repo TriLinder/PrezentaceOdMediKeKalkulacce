@@ -1,6 +1,7 @@
 <script>
     import H2Slide from "../general/H2Slide.svelte";
     import HowDoYouCount from "./HowDoYouCount.svelte";
+    import CounterSlide from "../general/CounterSlide.svelte";
 </script>
 
 <H2Slide content={"KALKULAČKA?"} notes={`Je čas si dát na chvilku přestávku od nekonečného skládání součástek a
@@ -12,3 +13,5 @@
                                             Tak bude tedy pracovat i naše kalkulačka.`}/>
 
 <HowDoYouCount/>
+
+<CounterSlide numeralSystemBase={10} numberOfDigits={4} shouldPlaySound={true} notes={``}/>
