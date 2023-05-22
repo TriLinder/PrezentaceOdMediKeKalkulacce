@@ -9,7 +9,7 @@
 </script>
 
 <Blank/>
-<H2Slide content={"Od hliníku ke kalkulačce"} notes={'Dobrý den, a vítejte k mé prezentaci s názvem "Od hliníku ke kalkulačce".'}/>
+<H2Slide content={"Od hliníku ke kalkulačce"}/>
 
 <Expectations/>
 <LogicGatesIntroduction/>
