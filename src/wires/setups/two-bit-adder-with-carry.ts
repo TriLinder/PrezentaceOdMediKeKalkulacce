@@ -7,7 +7,7 @@ import { AndGateComponent } from "../components/and-gate";
 import { SwitchComponent } from "../components/switch";
 import { LampComponent } from "../components/lamp";
 import { WireComponent } from "../components/wire";
-import { LabelComponent } from "../components/label-component";
+import { LabelComponent } from "../components/label";
 
 import { Coordinates } from "../types/coordinates";
 import { Size } from "../types/size";

@@ -1,4 +1,4 @@
-import { LabelComponent } from "./label-component";
+import { LabelComponent } from "./label";
 
 import type { Coordinates } from "../types/coordinates";
 import type { Size } from "../types/size";

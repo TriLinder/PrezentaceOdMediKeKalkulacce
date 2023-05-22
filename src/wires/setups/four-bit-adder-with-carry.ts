@@ -5,7 +5,7 @@ import { SwitchComponent } from "../components/switch";
 import { TwoBitAdderComponent } from "../components/two-bit-adder";
 import { LampComponent } from "../components/lamp";
 import { WireComponent } from "../components/wire";
-import { LabelComponent } from "../components/label-component";
+import { LabelComponent } from "../components/label";
 import { DynamicNumberLabelComponent } from "../components/dynamic-number-label";
 
 import { Coordinates } from "../types/coordinates";
