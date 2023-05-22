@@ -10,7 +10,7 @@
     <aside class="notes">
         Podjmě se podívat jak se sčítají pouze dvě cifry. Od teď cifrám v binární soustavě budu říkat jinak. Budu jim říkat bity.
         Máme zde bity A a B, které sčítáme. Přenos znamená že si musím jeden bit "držet" a "přenést" na další místo
-        při sčítání, jak jsme dělali doposud. A součet je co napíšeme pod čáru dolů jako výsledek. Jak ale postavíme stroj,
+        při sčítání pod sebou, jak jsme dělali doposud. A součet je co napíšeme pod čáru dolů jako výsledek. Jak ale postavíme obvod,
         který dokáže takovou tabulku vyplnit?
     </aside>
 </section>
@@ -21,7 +21,7 @@
     </div>
 
     <aside class="notes">
-        Mnoha z vás už to dost možná vidí, ale když se podíváme specificky na sloupec přenosu,
+        Někteří z vás už to dost možná vidí, ale když se podíváme specificky na sloupec přenosu,
         tak vypadá jako jedno hradlo, které jsme si dříve představili.
     </aside>
 </section>
