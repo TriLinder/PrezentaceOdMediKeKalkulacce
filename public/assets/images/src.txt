@@ -1,5 +1,4 @@
 https://openverse.org/image/2f8a1cff-c15e-469a-b401-20d4169d1e1a
-https://upload.wikimedia.org/wikipedia/commons/a/a0/Kugleramme.jpg
 https://openverse.org/image/768dab28-6f9a-45c9-8811-cb9563f8893b
 https://commons.wikimedia.org/wiki/File:MacBook_Air_on_table_(cropped).jpg
 https://en.wikipedia.org/wiki/File:Eniac.jpg
@@ -7,3 +6,4 @@ https://en.wikipedia.org/wiki/File:Finder_Relais_Zuse_Z3.jpg
 https://commons.wikimedia.org/w/index.php?curid=35100021
 https://commons.wikimedia.org/wiki/File:Transistors-white.jpg
 https://www.flickr.com/photos/29155878@N03/25613291443
+https://pixabay.com/photos/palm-finger-hand-let-2704015/

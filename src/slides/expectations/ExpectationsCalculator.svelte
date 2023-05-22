@@ -23,7 +23,7 @@
     <img src="/assets/images/scientific-calculator.png" style="opacity: .25; filter: saturate(0);" class="drop-shadow-lg" alt="Casio FX-61F Vědecká kalkulačka">
 
     <aside class="notes">
-        Kalkulačka, o které dneska budeme mluvit, vám pravděpodobně nepomůže při testu z matiky..
+        Kalkulačka, o které dneska budeme mluvit, vám nepomůže při testu z matiky..
     </aside>
 </section>
 
@@ -32,10 +32,10 @@
 
     <div class="row">
         <img src="/assets/images/scientific-calculator.png" style="opacity: .25; filter: saturate(0);" class="drop-shadow-lg" alt="Casio FX-61F Vědecká kalkulačka">
-        <img src="/assets/images/abacus.jpg" class="r-frame drop-shadow-lg" alt="Počítadlo">
+        <img src="/assets/images/fingers.jpg" class="r-frame drop-shadow-lg" alt="Dlaň">
     </div>
 
     <aside class="notes">
-        ale bude spíše přirovnatelná k jednoduchému počítadlu.
+        a bude pravděpodobně lehčí počítat na prstech.
     </aside>
 </section>
