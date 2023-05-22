@@ -3,7 +3,7 @@
     import WireSimulatorSlide from "../general/WireSimulatorSlide.svelte";
 
     import EndingComputerHistory from "./EndingComputerHistory.svelte";
-    import EndingFinal from "./EndingFinal.svelte";
+    import EndingFinal from "./EndingThankYou.svelte";
 
     import { LampSwitchCircuitSetup } from "../../wires/setups/lamp-switch-circuit";
 </script>
