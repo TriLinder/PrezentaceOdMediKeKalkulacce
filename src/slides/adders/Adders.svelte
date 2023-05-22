@@ -1,11 +1,11 @@
 <script>
+    import H2Slide from "../general/H2Slide.svelte";
     import WireSimulatorSlide from "../general/WireSimulatorSlide.svelte";
     import RegroupingAdditionTable from "../../lib/RegroupingAdditionTable/RegroupingAdditionTable.svelte";
 
     import { TwoBitAdderSetup } from "../../wires/setups/two-bit-adder";
     import { TwoBitAdderWithCarrySetup } from "../../wires/setups/two-bit-adder-with-carry";
     import { FourBitAdderWithCarrySetup } from "../../wires/setups/four-bit-adder-with-carry";
-    import H2Slide from "../general/H2Slide.svelte";
 </script>
 
 <WireSimulatorSlide wireSetup={new TwoBitAdderSetup()} notes={`
@@ -69,6 +69,5 @@
     Je zde ale ovšem jeden problém. Pro výsledek máme jen 4 bity. To nám dává pouze 4 na druhou, neboli 16, kombinací. Jedna z
     těch kombinací je i 0. Pokud teda sečteme například 15 + 1, výsledek přeteče a to je znovu indikováno přesunovým bitem zde.
     Mohli bysme ovšem znovu napojit tento obvod sama na sebe a dostat tak osmibitovou kalkulačku. Kdybysme tu napojili na sebe,
-    dostali bysme šestnáctibitovou, poté třectidvoubitovou, šedesátičtyřbitovou kalkulačku a tak dál. Ovšem toto neni pouze
-    kalkulačka, ale také, byť jednoduchý, procesor. Na stejné bázi funguje každý počítač, jen ovšem trochu komplikovaněji.
+    dostali bysme šestnáctibitovou, poté třectidvoubitovou, šedesátičtyřbitovou kalkulačku a tak dál.
 `}/>

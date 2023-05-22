@@ -5,6 +5,7 @@
     import LogicGatesIntroduction from './slides/logic-gates-introduction/LogicGatesIntroduction.svelte';
     import Counting from './slides/counting/Counting.svelte';
     import Adders from './slides/adders/Adders.svelte';
+    import Ending from './slides/ending/Ending.svelte';
 </script>
 
 <Blank/>
@@ -14,3 +15,5 @@
 <LogicGatesIntroduction/>
 <Counting/>
 <Adders/>
+
+<Ending/>
