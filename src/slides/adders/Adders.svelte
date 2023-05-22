@@ -5,6 +5,7 @@
     import { TwoBitAdderSetup } from "../../wires/setups/two-bit-adder";
     import { TwoBitAdderWithCarrySetup } from "../../wires/setups/two-bit-adder-with-carry";
     import { FourBitAdderWithCarrySetup } from "../../wires/setups/four-bit-adder-with-carry";
+    import H2Slide from "../general/H2Slide.svelte";
 </script>
 
 <WireSimulatorSlide wireSetup={new TwoBitAdderSetup()} notes={`
@@ -53,4 +54,21 @@
     Dobře. Výhoda tohoto obvodu je, že ho můžeme znovu proměnit do samostatné součástky a dokonce napojit sama na sebe!
 `}/>
 
-<WireSimulatorSlide wireSetup={new FourBitAdderWithCarrySetup()}/>
+<H2Slide content={"POSLEDNÍ KROK.."} notes={`
+    Je tedy čas na poslední krok.
+`}/>
+
+<WireSimulatorSlide wireSetup={new FourBitAdderWithCarrySetup()} notes={`
+    Tohle možná vypadá jako drátová monstrozita, ale vše co jsme udělali, je proměnit náš předchozí obvod do této modré součástky 
+    a napojily ho do řetězce sama za sebou. Zde máme vstupy pro dvě čtyřbitové čísla a extra přesunový vstupní bit. Na druhé straně
+    máme výstup ve formě jednoho čtyřbitového čísla a jednoho přesunového bitu. Pro ulehčení života se přidaly nad všechny tři
+    čísla ukazetelé v desítkové soustavě. Můžeme tento obvod tedy otestovat.
+    
+    [[PROJÍT RŮZNÉ KOMBINACE ČÍSEL. DÁVAT POZOR, AŤ JE VÝSLEDEK <= 15]]
+    
+    Je zde ale ovšem jeden problém. Pro výsledek máme jen 4 bity. To nám dává pouze 4 na druhou, neboli 16, kombinací. Jedna z
+    těch kombinací je i 0. Pokud teda sečteme například 15 + 1, výsledek přeteče a to je znovu indikováno přesunovým bitem zde.
+    Mohli bysme ovšem znovu napojit tento obvod sama na sebe a dostat tak osmibitovou kalkulačku. Kdybysme tu napojili na sebe,
+    dostali bysme šestnáctibitovou, poté třectidvoubitovou, šedesátičtyřbitovou kalkulačku a tak dál. Ovšem toto neni pouze
+    kalkulačka, ale také, byť jednoduchý, procesor. Na stejné bázi funguje každý počítač, jen ovšem trochu komplikovaněji.
+`}/>
