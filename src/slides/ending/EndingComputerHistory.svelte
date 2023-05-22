@@ -1,6 +1,6 @@
 <style>
     img {
-        height: 45vh;
+        height: 30rem;
         background: transparent;
         margin: 0 auto 0 auto !important;
     }
@@ -78,7 +78,7 @@
     <h2>CO DÁL?</h2>
 
     <div class="row">
-        <img src="assets/images/processor.jpg" style="height: 35vh;" class="r-frame" alt="Procesor">
+        <img src="assets/images/processor.jpg" style="height: 20rem;" class="r-frame" alt="Procesor">
         <img src="assets/images/macbook.jpg" class="r-frame" alt="Macbook na stole">
     </div>
 

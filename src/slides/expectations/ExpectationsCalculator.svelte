@@ -1,6 +1,6 @@
 <style>
     img {
-        height: 50vh;
+        height: 30rem;
         background: transparent;
         margin: 0 auto 0 auto !important;
     }
