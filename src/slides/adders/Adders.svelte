@@ -4,6 +4,7 @@
 
     import { TwoBitAdderSetup } from "../../wires/setups/two-bit-adder";
     import { TwoBitAdderWithCarrySetup } from "../../wires/setups/two-bit-adder-with-carry";
+    import { FourBitAdderWithCarrySetup } from "../../wires/setups/four-bit-adder-with-carry";
 </script>
 
 <WireSimulatorSlide wireSetup={new TwoBitAdderSetup()} notes={`
@@ -51,3 +52,5 @@
 
     Dobře. Výhoda tohoto obvodu je, že ho můžeme znovu proměnit do samostatné součástky a dokonce napojit sama na sebe!
 `}/>
+
+<WireSimulatorSlide wireSetup={new FourBitAdderWithCarrySetup()}/>

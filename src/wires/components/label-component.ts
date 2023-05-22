@@ -21,6 +21,20 @@ export class LabelComponent extends Component {
         this.draw();
     }
 
+    public updateLabel(label: string) {
+        if (label != this.label) {
+            this.label = label;
+            this.draw();
+        }
+    }
+
+    public updateFontSize(fontSize: number) {
+        if (fontSize != this.fontSize) {
+            this.fontSize = fontSize;
+            this.draw();
+        }
+    }
+
     private draw() {
         this.canvas = document.createElement("canvas");
         const ctx = this.canvas.getContext("2d")!;

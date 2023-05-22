@@ -42,6 +42,8 @@ export class Component {
         switch (name) {
             case "center":
                 return new Coordinates(this.position.x + (this.size.width / 2), this.position.y + (this.size.height / 2));
+            case "top":
+                return new Coordinates(this.position.x + (this.size.width / 2), this.position.y);
             case "bottom":
                 return new Coordinates(this.position.x + (this.size.width / 2), this.position.y + this.size.height);
             case "left":
