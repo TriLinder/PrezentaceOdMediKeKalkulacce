@@ -60,7 +60,7 @@ export class SwitchComponent extends Component {
 
         const ctx = this.canvas.getContext("2d")!;
 
-        ctx.fillStyle = this.switched ? "yellow" : "gray";
+        ctx.fillStyle = this.switched ? "#f9f917" : "#bebebe";
 
         ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
 

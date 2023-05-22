@@ -57,7 +57,7 @@ export class WireComponent extends Component {
         const ctx = this.canvas.getContext("2d")!;
 
         ctx.lineWidth = this.width;
-        ctx.strokeStyle = this.isOn ? "yellow" : "gray";
+        ctx.strokeStyle = this.isOn ? "#dbdb1a" : "#9b9b9b";
 
         if (this.startPosition.x <= this.endPosition.x && this.startPosition.y <= this.endPosition.y) {
             ctx.beginPath();
