@@ -2,10 +2,10 @@
     "presentationTitle": "Od hliníku ke kalkulačce",
     "expectationsTitle": "OČEKÁVÁNÍ",
     "logicalMachinesTitle": "LOGICKÉ STROJE",
-    "thruthTableOutput": "VÝSTUP",
+    "truthTableOutput": "VÝSTUP",
     "logicGatesTitle": "HRADLA",
     "combineTitle": "ZKOMBINOVAT?",
-    "oneMoreLogicGateTitle": "JEŠTĚ JEDNO HRADLO..",
+    "lastLogicGateTitle": "JEŠTĚ JEDNO HRADLO..",
     "calculatorTitle": "KALKULAČKA?",
     "countingIntroSlide": {
         "howDoYou": "JAK SE",
@@ -16,10 +16,12 @@
     },
     "summingTitle": "SČÍTÁNÍ",
     "numberInputTitle": "ČÍSLA?",
-    "sumTableCarry": "PŘENOS",
-    "sumTableSum": "SOUČET",
-    "lastStep": "POSLEDNÍ KROK..",
-    "whatNowTitle": "CO DÁL?",
+    "sumTable": {
+        "carry": "PŘENOS",
+        "sum": "SOUČET"
+    },
+    "lastStepTitle": "POSLEDNÍ KROK..",
+    "whatsNextTitle": "CO DÁL?",
     "thankYouSlide": {
         "thanksForAttention": "DĚKUJI ZA POZORNOST.",
         "resources": "ZDROJE:",

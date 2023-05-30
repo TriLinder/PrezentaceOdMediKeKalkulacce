@@ -1,4 +1,6 @@
 <script>
+    import { _ } from "svelte-i18n";
+
     import H2Slide from "../general/H2Slide.svelte";
     import WireSimulatorSlide from "../general/WireSimulatorSlide.svelte";
     import RegroupingAdditionTable from "../../lib/RegroupingAdditionTable/RegroupingAdditionTable.svelte";
@@ -54,7 +56,7 @@
     Dobře. Výhoda tohoto obvodu je, že ho můžeme znovu proměnit do samostatné součástky a dokonce napojit sama na sebe!
 `}/>
 
-<H2Slide content={"POSLEDNÍ KROK.."} notes={`
+<H2Slide content={$_("lastStepTitle")} notes={`
     Je tedy čas na poslední krok.
 `}/>
 

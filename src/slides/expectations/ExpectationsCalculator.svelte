@@ -1,3 +1,7 @@
+<script>
+    import { _ } from 'svelte-i18n';
+</script>
+
 <style>
     img {
         height: 30rem;
@@ -12,13 +16,13 @@
 </style>
 
 <section data-auto-animate>
-    <h2>Očekávání</h2>
+    <h2>{$_('expectationsTitle')}</h2>
 
     <img src="/assets/images/scientific-calculator.png" class="drop-shadow-lg" alt="Casio FX-61F Vědecká kalkulačka">
 </section>
 
 <section data-auto-animate>
-    <h2>Očekávání</h2>
+    <h2>{$_('expectationsTitle')}</h2>
 
     <img src="/assets/images/scientific-calculator.png" style="opacity: .25; filter: saturate(0);" class="drop-shadow-lg" alt="Casio FX-61F Vědecká kalkulačka">
 
@@ -28,7 +32,7 @@
 </section>
 
 <section data-auto-animate>
-    <h2>Očekávání</h2>
+    <h2>{$_('expectationsTitle')}</h2>
 
     <div class="row">
         <img src="/assets/images/scientific-calculator.png" style="opacity: .25; filter: saturate(0);" class="drop-shadow-lg" alt="Casio FX-61F Vědecká kalkulačka">

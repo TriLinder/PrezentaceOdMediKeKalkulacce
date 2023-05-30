@@ -1,4 +1,6 @@
 <script>
+    import { _ } from 'svelte-i18n';
+    
     export let type = "dual";
     export let truthFunction;
 </script>
@@ -28,7 +30,7 @@
 {#if type == "dual"}
     <table>
         <tr>
-            <th>A</th><th>B</th><th>VÝSTUP</th>
+            <th>A</th><th>B</th><th>{$_("truthTableOutput")}</th>
         </tr>
         <tr>
             <td class="false">0</td> <td class="false">0</td> <td class={String(truthFunction(false, false))}>{Number(truthFunction(false, false))}</td>
@@ -48,7 +50,7 @@
 {#if type == "single"}
     <table>
         <tr>
-            <th>A</th><th>VÝSTUP</th>
+            <th>A</th><th>{$_("truthTableOutput")}</th>
         </tr>
         <tr>
             <td class="false">0</td> <td class={String(truthFunction(false))}>{Number(truthFunction(false))}</td>

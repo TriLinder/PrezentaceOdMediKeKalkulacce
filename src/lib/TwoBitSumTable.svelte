@@ -1,4 +1,6 @@
 <script>
+    import { _ } from "svelte-i18n";
+
     export let carryColumnColor = "transparent";
     export let sumColumnColor = "transparent";
 </script>
@@ -27,7 +29,7 @@
 
 <table>
     <tr>
-        <th>A</th> <th>B</th> <th style="background-color: {carryColumnColor};">PŘENOS</th> <th style="background-color: {sumColumnColor};">SOUČET</th>
+        <th>A</th> <th>B</th> <th style="background-color: {carryColumnColor};">{$_("sumTable.carry")}</th> <th style="background-color: {sumColumnColor};">{$_("sumTable.sum")}</th>
     </tr>
     <tr>
         <td class="false">0</td> <td class="false">0</td> <td class="false" style="background-color: {carryColumnColor};">0</td> <td class="false" style="background-color: {sumColumnColor};">0</td>

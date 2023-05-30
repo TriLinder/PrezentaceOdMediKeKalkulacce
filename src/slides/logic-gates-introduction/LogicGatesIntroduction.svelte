@@ -1,4 +1,6 @@
 <script>
+    import { _ } from 'svelte-i18n';
+
     import WireSimulatorSlide from "../general/WireSimulatorSlide.svelte";
     import TruthTableSlide from "../general/TruthTableSlide.svelte";
     import H2Slide from "../general/H2Slide.svelte";
@@ -42,7 +44,7 @@
     Proto se nazývá "NOT", anglicky "NE".
 `}/>
 
-<H2Slide content={"HRADLA"} notes={`
+<H2Slide content={$_("logicGatesTitle")} notes={`
     Teď když známe funkce AND a NOT obvodů, můžeme z nich udělat zjednodušené samostatné součástky, 
     nazývané hradla, které můžeme použít v našich obvodech..
 `}/>
@@ -51,7 +53,7 @@
     .. jako je tento. Jako předtím, toto NOT hradlo invertuje vstup, takže když přepínač zapnu, lampa zhasne a naopak.
 `}/>
 
-<H2Slide content="ZKOMBINOVAT?" notes={`
+<H2Slide content={$_("combineTitle")} notes={`
     Zatím tedy známe dvě hradla: AND a NOT. Ale co je zkombinovat?
 `}/>
 
@@ -77,7 +79,7 @@
     pojmenováno "OR", což přeloženo z angličtiny znamená "NEBO".
 `}/>
 
-<H2Slide content={"JEŠTĚ JEDNO HRADLO.."} notes={`
+<H2Slide content={$_("lastLogicGateTitle")} notes={`
     Pojdmě si tedy vytvořit ještě jedno poslední hradlo.
 `}/>
 

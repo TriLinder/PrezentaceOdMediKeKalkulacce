@@ -1,3 +1,7 @@
+<script>
+    import { _ } from "svelte-i18n";
+</script>
+
 <style>
     img {
         height: 30rem;
@@ -12,7 +16,7 @@
 </style>
 
 <section data-auto-animate>
-    <h2>CO DÁL?</h2>
+    <h2>{$_("whatsNextTitle")}</h2>
 
     <aside class="notes">
         Ovšem toto neni pouze kalkulačka, ale také, byť jednoduchý, procesor. Na stejné bázi 
@@ -22,7 +26,7 @@
 </section>
 
 <section data-auto-animate>
-    <h2>CO DÁL?</h2>
+    <h2>{$_("whatsNextTitle")}</h2>
 
     <img src="assets/images/z3.jpg" class="r-frame" alt="Počítač Z3">
 
@@ -32,7 +36,7 @@
 </section>
 
 <section data-auto-animate>
-    <h2>CO DÁL?</h2>
+    <h2>{$_("whatsNextTitle")}</h2>
 
     <img src="assets/images/vacuum-tube.jpg" class="r-frame" alt="Elektronka">
 
@@ -43,7 +47,7 @@
 </section>
 
 <section data-auto-animate>
-    <h2>CO DÁL?</h2>
+    <h2>{$_("whatsNextTitle")}</h2>
 
     <img src="assets/images/eniac.jpg" class="r-frame" alt="Počítač ENIAC">
 
@@ -54,7 +58,7 @@
 </section>
 
 <section data-auto-animate>
-    <h2>CO DÁL?</h2>
+    <h2>{$_("whatsNextTitle")}</h2>
 
     <img src="assets/images/transistors.jpg" class="r-frame" alt="Tranzistory">
 
@@ -64,7 +68,7 @@
 </section>
 
 <section data-auto-animate>
-    <h2>CO DÁL?</h2>
+    <h2>{$_("whatsNextTitle")}</h2>
 
     <img src="assets/images/processor.jpg" class="r-frame" alt="Procesor">
 
@@ -75,7 +79,7 @@
 </section>
 
 <section data-auto-animate>
-    <h2>CO DÁL?</h2>
+    <h2>{$_("whatsNextTitle")}</h2>
 
     <div class="row">
         <img src="assets/images/processor.jpg" style="height: 20rem;" class="r-frame" alt="Procesor">

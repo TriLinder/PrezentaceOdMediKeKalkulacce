@@ -1,3 +1,8 @@
+<script>
+    import { _ } from 'svelte-i18n';
+</script>
+
+
 <style>
     img {
         height: 30rem;
@@ -12,7 +17,7 @@
 </style>
 
 <section data-auto-animate>
-    <h2>Očekávání</h2>
+    <h2>{$_('expectationsTitle')}</h2>
 
     <img src="assets/images/wires.jpg" alt="Electrical wires">
 
@@ -22,7 +27,7 @@
 </section>
 
 <section data-auto-animate>
-    <h2>Očekávání</h2>
+    <h2>{$_('expectationsTitle')}</h2>
 
     <div class="row">
         <img src="assets/images/wires.jpg" style="height: 20rem; opacity: .25; filter: saturate(75%);" alt="Elektrické dráty">
@@ -35,7 +40,7 @@
 </section>
 
 <section data-auto-animate>
-    <h2>Logické stroje</h2>
+    <h2>{$_('logicalMachinesTitle')}</h2>
 
     <img src="assets/images/macbook.jpg" style="height: 30rem;" class="r-frame" alt="Notebook na stole">
 

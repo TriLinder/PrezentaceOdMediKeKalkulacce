@@ -1,4 +1,6 @@
 <script>
+    import { _ } from "svelte-i18n";
+
     import RegroupingAdditionTable from "../../lib/RegroupingAdditionTable/RegroupingAdditionTable.svelte";
 
     function ensureNumber(input) {
@@ -25,7 +27,7 @@
 </style>
 
 <section>
-    <h2>ČÍSLA?</h2>
+    <h2>{$_("numberInputTitle")}</h2>
 
     <input type="number" placeholder="#1" bind:value={firstInput}> + <input type="number" placeholder="#2" bind:value={secondInput}>
 

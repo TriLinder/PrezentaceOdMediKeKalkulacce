@@ -2,10 +2,10 @@
     "presentationTitle": "FROM ALUMINIUM TO A CALCULATOR",
     "expectationsTitle": "EXPECTATIONS",
     "logicalMachinesTitle": "LOGICAL MACHINES",
-    "thruthTableOutput": "OUTPUT",
+    "truthTableOutput": "OUTPUT",
     "logicGatesTitle": "LOGIC GATES",
     "combineTitle": "COMBINE?",
-    "oneMoreLogicGateTitle": "ONE MORE LOGIC GATE..",
+    "lastLogicGateTitle": "ONE LAST LOGIC GATE..",
     "calculatorTitle": "CALCULATOR?",
     "countingIntroSlide": {
         "howDoYou": "HOW DO YOU",
@@ -16,14 +16,16 @@
     },
     "summingTitle": "SUMMING",
     "numberInputTitle": "NUMBERS?",
-    "sumTableCarry": "CARRY",
-    "sumTableSum": "SUM",
-    "lastStep": "THE LAST STEP",
-    "whatNowTitle": "WHAT NOW?",
+    "sumTable": {
+        "carry": "CARRY",
+        "sum": "SUM"
+    },
+    "lastStepTitle": "THE LAST STEP",
+    "whatsNextTitle": "WHAT'S NEXT?",
     "thankYouSlide": {
         "thanksForAttention": "THANKS FOR YOUR ATTENTION.",
         "resources": "RESOURCES:",
-        "assets": "Sources and licenes of assets in respective directories.",
+        "assets": "Sources and licenes of other assets in their respective directories.",
         "thisPresentationIs": "This presentation is ",
         "openSource": "open-source"
     }

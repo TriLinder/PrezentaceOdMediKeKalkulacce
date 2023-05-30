@@ -1,7 +1,11 @@
+<script>
+    import { _ } from "svelte-i18n";
+</script>
+
 <section data-auto-animate>
-    <h2>JAK SE</h2>
-    <h2>SČÍTÁ</h2>
-    <h2>V BINÁRCE?</h2>
+    <h2>{$_("countingIntroSlide.howDoYou")}</h2>
+    <h2>{$_("countingIntroSlide.sum")}</h2>
+    <h2>{$_("countingIntroSlide.inBinaryQuestion")}</h2>
 
     <aside class="notes">
         Ale jak se sčítá v binárce?
@@ -10,9 +14,9 @@
 </section>
 
 <section data-auto-animate>
-    <h2>JAK SE</h2>
-    <h2 data-id="count">POČÍTÁ</h2>
-    <h2>V BINÁRCE?</h2>
+    <h2>{$_("countingIntroSlide.howDoYou")}</h2>
+    <h2 data-id="count">{$_("countingIntroSlide.count")}</h2>
+    <h2>{$_("countingIntroSlide.inBinaryQuestion")}</h2>
 
     <aside class="notes">
         Jak se počítá v binárce?
@@ -21,8 +25,8 @@
 </section>
 
 <section data-auto-animate>
-    <h2>JAK SE</h2>
-    <h2 data-id="count">POČÍTÁ?</h2>
+    <h2>{$_("countingIntroSlide.howDoYou")}</h2>
+    <h2 data-id="count">{$_("countingIntroSlide.countQuestion")}</h2>
 
     <aside class="notes">
         Jak se vůbec počítá?

@@ -1,4 +1,6 @@
 <script>
+    import { _ } from "svelte-i18n";
+
     import BasicLink from "../../lib/BasicLink.svelte";
 </script>
 
@@ -9,16 +11,16 @@
 </style>
 
 <section data-auto-animate>
-    <h2>DĚKUJI ZA POZORNOST.</h2>
+    <h2>{$_("thankYouSlide.thanksForAttention")}</h2>
 </section>
 
 <section data-auto-animate data-auto-animate-duration=2>
-    <h2>DĚKUJI ZA POZORNOST.</h2>
+    <h2>{$_("thankYouSlide.thanksForAttention")}</h2>
     
     <hr>
 
     <div class="resources">
-        <h4>Zdroje:</h4>
+        <h4>{$_("thankYouSlide.resources")}</h4>
 
         <ul>
             <li> <BasicLink href={"https://en.wikipedia.org/wiki/Logic_gate"}/> </li>
@@ -26,9 +28,9 @@
             <li> <BasicLink href={"https://en.wikipedia.org/wiki/Vacuum_tube"}/> </li>
             <li> <BasicLink href={"https://en.wikipedia.org/wiki/Z3_(computer)"}/> </li>
             <li> <BasicLink href={"https://en.wikipedia.org/wiki/ENIAC"}/> </li>
-            <li> Zdroje a licence aktiv v příslušných adresářích. </li>
+            <li> {$_("thankYouSlide.assets")} </li>
         </ul>
     </div>
 
-    <span>Tato prezentace je <a href="/">open-source</a>!</span>
+    <span>{$_("thankYouSlide.thisPresentationIs")} <a href="/">{$_("thankYouSlide.openSource")}</a>!</span>
 </section>

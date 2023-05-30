@@ -1,5 +1,5 @@
 <script>
-    import { _ } from 'svelte-i18n';
+    import { _, locale } from 'svelte-i18n';
 
     import Blank from './slides/general/Blank.svelte';
     import H2Slide from './slides/general/H2Slide.svelte';
@@ -8,6 +8,8 @@
     import Counting from './slides/counting/Counting.svelte';
     import Adders from './slides/adders/Adders.svelte';
     import Ending from './slides/ending/Ending.svelte';
+
+    locale.set("cs");
 </script>
 
 <Blank/>

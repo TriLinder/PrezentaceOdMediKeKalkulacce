@@ -1,4 +1,6 @@
 <script>
+    import { _ } from "svelte-i18n";
+
     import H2Slide from "../general/H2Slide.svelte";
     import HowDoYouCount from "./HowDoYouCount.svelte";
     import CounterSlide from "../general/CounterSlide.svelte";
@@ -6,7 +8,7 @@
     import CountingLogicGates from "./CountingLogicGates.svelte";
 </script>
 
-<H2Slide content={"KALKULAČKA?"} notes={`
+<H2Slide content={$_("calculatorTitle")} notes={`
     Je čas si dát na chvilku přestávku od nekonečného skládání součástek a znovu se 
     podívat na náš cíl: a to postavit kalkulačku. Jak spoustě z vás už asi dávno došlo,
     tak jedničky a nuly, co jsme doposud používaly v předchozích tabulkách byly 
@@ -29,7 +31,7 @@
     Jenom místo desíti číslic pro jednu cifru máme jenom dvě.
 `}/>
 
-<H2Slide content={"SČÍTÁNÍ"} notes={`
+<H2Slide content={$_("summingTitle")} notes={`
     Podjmě si tedy ukázat jak sečíst dvě čísla.
 `}/>
 
