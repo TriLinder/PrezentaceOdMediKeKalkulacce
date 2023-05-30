@@ -1,4 +1,6 @@
 <script>
+    import { _ } from 'svelte-i18n';
+
     import Blank from './slides/general/Blank.svelte';
     import H2Slide from './slides/general/H2Slide.svelte';
     import Expectations from './slides/expectations/Expectations.svelte';
@@ -9,7 +11,7 @@
 </script>
 
 <Blank/>
-<H2Slide content={"Od hliníku ke kalkulačce"}/>
+<H2Slide content={$_("presentationTitle")}/>
 
 <Expectations/>
 <LogicGatesIntroduction/>

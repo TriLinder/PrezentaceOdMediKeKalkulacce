@@ -1,5 +1,5 @@
 <script>
-  import 'reveal.js/dist/reveal.css';
+    import 'reveal.js/dist/reveal.css';
 
     import Reveal            from 'reveal.js';
     import { onMount, tick } from 'svelte';
@@ -13,6 +13,20 @@
         const deck = new Reveal(reveal);
         deck.initialize();
       });
+
+    //i18n
+    import { addMessages, init } from 'svelte-i18n';
+
+    import cs from "./lang/cs.json";
+    import en from "./lang/en.json";
+
+    addMessages("cs", cs);
+    addMessages("en", en);
+
+    init({
+        fallbackLocale: "cs",
+        initialLocale: "cs"
+    });
 
 </script>
 
