@@ -1,23 +1,17 @@
 import { WireSetup } from "./wire-setup";
 
 import { SwitchComponent } from "../components/switch";
-import { LampComponent } from "../components/lamp";
-import { WireComponent } from "../components/wire";
 
 import { Coordinates } from "../types/coordinates";
 import { Size } from "../types/size";
 import { Power } from "../types/power";
 
-export class ExampleWireSetup extends WireSetup {
+export class ExampleSetup extends WireSetup {
     constructor() {
         super();
 
-        const switchComponent = new SwitchComponent(new Coordinates(0, 0), new Size(100, 100), [new Power(true)], false);
-        const lampComponent = new LampComponent(new Coordinates(700, 300), new Size(100, 100), [switchComponent.getOutput(0)]);
-        const wireComponent = new WireComponent(switchComponent.getSnapPoint("center"), lampComponent.getSnapPoint("bottom"), 25, [switchComponent.getOutput(0)]);
+        const switchComponent = new SwitchComponent(new Coordinates(3840 / 2 - 500 / 2, 2160 / 2 - 500 / 2), new Size(500, 500), [new Power(true)], true);
 
         this.addComponent(switchComponent);
-        this.addComponent(lampComponent);
-        this.addComponent(wireComponent);
     }
 }
