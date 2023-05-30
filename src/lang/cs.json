@@ -1,4 +1,8 @@
 {
+    "languageSelectorSlide": {
+        "helloWorld": "Ahoj, světe!",
+        "czechSpeakerNotes": "(Poznámky řečníka jsou dostupné pouze v Češtině)"
+    },
     "presentationTitle": "Od hliníku ke kalkulačce",
     "expectationsTitle": "OČEKÁVÁNÍ",
     "logicalMachinesTitle": "LOGICKÉ STROJE",

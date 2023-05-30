@@ -1,6 +1,7 @@
 <script>
-    import { _, locale } from 'svelte-i18n';
+    import { _ } from 'svelte-i18n';
 
+    import Configuration from './slides/configuration/Configuration.svelte';
     import Blank from './slides/general/Blank.svelte';
     import H2Slide from './slides/general/H2Slide.svelte';
     import Expectations from './slides/expectations/Expectations.svelte';
@@ -8,9 +9,9 @@
     import Counting from './slides/counting/Counting.svelte';
     import Adders from './slides/adders/Adders.svelte';
     import Ending from './slides/ending/Ending.svelte';
-
-    locale.set("cs");
 </script>
+
+<Configuration/>
 
 <Blank/>
 <H2Slide content={$_("presentationTitle")}/>
