@@ -19,34 +19,33 @@ export class BoxComponent extends Component {
         ctx.fillStyle = color;
         ctx.fillRect(this.canvas.width / 10, 0, this.canvas.width - (this.canvas.width / 5), this.canvas.height);
     
-        const longetSide = Math.max(this.canvas.width, this.canvas.height);
         const shortestSide = Math.min(this.canvas.width, this.canvas.height);
     
         const fontSize = 30 * shortestSide / 100
     
         // Draw inputs
         ctx.fillStyle = "gray";
-    
-        const inputSpacing = this.canvas.height / (this.inputs.length + 1)
-    
+
         for (let i = 0; i < this.inputs.length; i++) {
-            const x = this.canvas.width * 0.15;
-            const y = (i + 1) * inputSpacing - (shortestSide * 0.15 / 2);
-    
+            const snapPoint = this.getSnapPoint(`input${i}`);
+            const x = snapPoint.x - this.position.x;
+            const y = snapPoint.y - this.position.y;
+
             ctx.beginPath();
-            ctx.arc(x, y + (inputSpacing / 8), shortestSide * 0.15, 0, 2 * Math.PI);
+            ctx.arc(x, y, shortestSide * 0.15, 0, 2 * Math.PI);
             ctx.fill();
         }
     
         // Draw outputs
-        const outputSpacing = this.canvas.height / (this.outputs.length + 1)
-    
+        ctx.fillStyle = "gray";
+
         for (let i = 0; i < this.outputs.length; i++) {
-            const x = this.canvas.width - (this.canvas.width * 0.15);
-            const y = (i + 1) * outputSpacing - (shortestSide * 0.15 / 2);
-    
+            const snapPoint = this.getSnapPoint(`output${i}`);
+            const x = snapPoint.x - this.position.x;
+            const y = snapPoint.y - this.position.y;
+
             ctx.beginPath();
-            ctx.arc(x, y + (outputSpacing / 8), shortestSide * 0.15, 0, 2 * Math.PI);
+            ctx.arc(x, y, shortestSide * 0.15, 0, 2 * Math.PI);
             ctx.fill();
         }
     
@@ -60,8 +59,6 @@ export class BoxComponent extends Component {
     }
 
     public getSnapPoint(name: string): Coordinates {
-        const shortestSide = Math.min(this.canvas.width, this.canvas.height);
-
         if (name.startsWith("input")) {
             const inputIndex = Number(name.split("input")[1]);
 
