@@ -12,7 +12,7 @@ import 'reveal.js/plugin/highlight/monokai.css';
 export default {
     // App Config
     app: {
-        name: 'Od hliníku ke kalkulačce',
+        name: 'Od mědi ke kalkulačce',
     },
     // Reveal Config
     reveal: {
