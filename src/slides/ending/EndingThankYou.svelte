@@ -1,7 +1,8 @@
 <script>
     import { _ } from "svelte-i18n";
-
     import BasicLink from "../../lib/BasicLink.svelte";
+
+    const repositoryLink = "https://github.com/TriLinder/PrezentaceOdMediKeKalkulacce";
 </script>
 
 <style>
@@ -32,5 +33,5 @@
         </ul>
     </div>
 
-    <span>{$_("thankYouSlide.thisPresentationIs")} <a href="/">{$_("thankYouSlide.openSource")}</a>!</span>
+    <span>{$_("thankYouSlide.thisPresentationIs")} <a href={repositoryLink} target="_blank" rel="noopener noreferrer">{$_("thankYouSlide.openSource")}</a>!</span>
 </section>
