@@ -28,6 +28,11 @@
         initialLocale: "cs"
     });
 
+    //Fix country flag emojis on Windows
+    import { polyfillCountryFlagEmojis } from "country-flag-emoji-polyfill";
+
+    polyfillCountryFlagEmojis();
+
 </script>
 
 <svelte:head>

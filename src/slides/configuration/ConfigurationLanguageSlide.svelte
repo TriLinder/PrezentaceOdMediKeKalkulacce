@@ -5,6 +5,7 @@
 <style>
     button {
         font-size: 2em;
+        font-family: "Twemoji Country Flags";
     }
 </style>
 

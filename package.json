@@ -19,6 +19,7 @@
     "vite": "^4.3.8"
   },
   "dependencies": {
+    "country-flag-emoji-polyfill": "^0.1.4",
     "reveal.js": "^4.3.1",
     "svelte-i18n": "^3.6.0"
   }
