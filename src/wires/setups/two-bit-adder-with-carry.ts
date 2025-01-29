@@ -9,6 +9,8 @@ import { LampComponent } from "../components/lamp";
 import { WireComponent } from "../components/wire";
 import { LabelComponent } from "../components/label";
 
+import { firstNumberWireColor, secondNumberWireColor, carryWireColor } from "./wire-color-palette";
+
 import { Coordinates } from "../types/coordinates";
 import { Size } from "../types/size";
 
@@ -33,17 +35,17 @@ export class TwoBitAdderWithCarrySetup extends WireSetup {
         const carryOutputComponent = new LampComponent(new Coordinates(3840 - 250, 2160 / 2 + 250 / 2), new Size(200, 200), [orGateComponent.getOutput(0)]);
 
         //Wires
-        const inputAToFirstXorGateWire = new WireComponent(inputAComponent.getSnapPoint("center"), firstXorGateComponent.getSnapPoint("input0"), 25, [inputAComponent.getOutput(0)]);
-        const inputBToFirstXorGateWire = new WireComponent(inputBComponent.getSnapPoint("center"), firstXorGateComponent.getSnapPoint("input1"), 25, [inputBComponent.getOutput(0)]);
+        const inputAToFirstXorGateWire = new WireComponent(inputAComponent.getSnapPoint("center"), firstXorGateComponent.getSnapPoint("input0"), 25, [inputAComponent.getOutput(0)], firstNumberWireColor);
+        const inputBToFirstXorGateWire = new WireComponent(inputBComponent.getSnapPoint("center"), firstXorGateComponent.getSnapPoint("input1"), 25, [inputBComponent.getOutput(0)], secondNumberWireColor);
 
-        const inputAToFirstAndGateWire = new WireComponent(inputAComponent.getSnapPoint("center"), firstAndGateComponent.getSnapPoint("input0"), 25, [inputAComponent.getOutput(0)]);
-        const inputBToFirstAndGateWire = new WireComponent(inputBComponent.getSnapPoint("center"), firstAndGateComponent.getSnapPoint("input1"), 25, [inputBComponent.getOutput(0)]);
+        const inputAToFirstAndGateWire = new WireComponent(inputAComponent.getSnapPoint("center"), firstAndGateComponent.getSnapPoint("input0"), 25, [inputAComponent.getOutput(0)], firstNumberWireColor);
+        const inputBToFirstAndGateWire = new WireComponent(inputBComponent.getSnapPoint("center"), firstAndGateComponent.getSnapPoint("input1"), 25, [inputBComponent.getOutput(0)], secondNumberWireColor);
 
         const firstXorGateToSecondXorGateWire = new WireComponent(firstXorGateComponent.getSnapPoint("output0"), secondXorGateComponent.getSnapPoint("input0"), 25, [firstXorGateComponent.getOutput(0)]);
         const firstAndGateToOrGateWire = new WireComponent(firstAndGateComponent.getSnapPoint("output0"), orGateComponent.getSnapPoint("input1"), 25, [firstAndGateComponent.getOutput(0)]);
 
-        const carryInputToSeondXorGateWire =  new WireComponent(carryInputComponent.getSnapPoint("center"), secondXorGateComponent.getSnapPoint("input1"), 25, [carryInputComponent.getOutput(0)]);
-        const carryInputToSeondAndGateWire =  new WireComponent(carryInputComponent.getSnapPoint("center"), secondAndGateComponent.getSnapPoint("input1"), 25, [carryInputComponent.getOutput(0)]);
+        const carryInputToSeondXorGateWire =  new WireComponent(carryInputComponent.getSnapPoint("center"), secondXorGateComponent.getSnapPoint("input1"), 25, [carryInputComponent.getOutput(0)], carryWireColor);
+        const carryInputToSeondAndGateWire =  new WireComponent(carryInputComponent.getSnapPoint("center"), secondAndGateComponent.getSnapPoint("input1"), 25, [carryInputComponent.getOutput(0)], carryWireColor);
 
         const firstXorGateToSecondAndGateWire = new WireComponent(firstXorGateComponent.getSnapPoint("output0"), secondAndGateComponent.getSnapPoint("input0"), 25, [firstXorGateComponent.getOutput(0)]);
         const secondAndGateToOrGateWire = new WireComponent(secondAndGateComponent.getSnapPoint("output0"), orGateComponent.getSnapPoint("input0"), 25, [secondAndGateComponent.getOutput(0)]);

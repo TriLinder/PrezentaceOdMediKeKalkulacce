@@ -4,23 +4,30 @@ import { Coordinates } from "../types/coordinates";
 import type { Size } from "../types/size";
 import type { Power } from "../types/power";
 
+type WireColors = {
+    on: string;
+    off: string;
+}
+
 export class WireComponent extends Component {
     private canvas: HTMLCanvasElement;
     
     private startPosition: Coordinates;
     private endPosition: Coordinates;
     private width: number;
+    private colors: WireColors;
 
     private inputs: Power[];
 
     private isOn: boolean;
 
-    constructor(startPosition: Coordinates, endPosition: Coordinates, width: number, inputs: Power[]) {
+    constructor(startPosition: Coordinates, endPosition: Coordinates, width: number, inputs: Power[], colors: WireColors = {on: "#dbdb1a", off: "#9b9b9b"}) {
         super();
 
         this.startPosition = startPosition;
         this.endPosition = endPosition;
         this.width = width;
+        this.colors = colors;
         this.inputs = inputs;
 
         this.position = new Coordinates(
@@ -57,7 +64,7 @@ export class WireComponent extends Component {
         const ctx = this.canvas.getContext("2d")!;
 
         ctx.lineWidth = this.width;
-        ctx.strokeStyle = this.isOn ? "#dbdb1a" : "#9b9b9b";
+        ctx.strokeStyle = this.isOn ? this.colors.on : this.colors.off;
 
         if (this.startPosition.x <= this.endPosition.x && this.startPosition.y <= this.endPosition.y) {
             ctx.beginPath();

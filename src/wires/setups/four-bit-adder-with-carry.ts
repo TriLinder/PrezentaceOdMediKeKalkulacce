@@ -8,6 +8,8 @@ import { WireComponent } from "../components/wire";
 import { LabelComponent } from "../components/label";
 import { DynamicNumberLabelComponent } from "../components/dynamic-number-label";
 
+import { firstNumberWireColor, secondNumberWireColor, carryWireColor, outputWireColor } from "./wire-color-palette";
+
 import { Coordinates } from "../types/coordinates";
 import { Size } from "../types/size";
 
@@ -57,40 +59,40 @@ export class FourBitAdderWithCarrySetup extends WireSetup {
         const carryOutputComponent = new LampComponent(new Coordinates(3840 - ioComponentSize, sumOutputDComponent.getSnapPoint("bottom").y + ioCategoryGap), new Size(ioComponentSize, ioComponentSize), [fourthAdderComponent.getOutput(1)]);
 
         //Wires
-        const carryInputToFirstAdderWire = new WireComponent(carryInputComponent.getSnapPoint("center"), firstAdderComponent.getSnapPoint("input2"), 25, [carryInputComponent.getOutput(0)]);
-        const firstAddderToSecondAdderWire = new WireComponent(firstAdderComponent.getSnapPoint("output1"), secondAdderComponent.getSnapPoint("input2"), 25, [firstAdderComponent.getOutput(1)]);
-        const secondAddderToThirdAdderWire = new WireComponent(secondAdderComponent.getSnapPoint("output1"), thirdAdderComponent.getSnapPoint("input2"), 25, [secondAdderComponent.getOutput(1)]);
-        const thirdAddderToFourthAdderWire = new WireComponent(thirdAdderComponent.getSnapPoint("output1"), fourthAdderComponent.getSnapPoint("input2"), 25, [thirdAdderComponent.getOutput(1)]);
-        const fourthAdderToCarryOutputWire = new WireComponent(fourthAdderComponent.getSnapPoint("output1"), carryOutputComponent.getSnapPoint("left"), 25, [fourthAdderComponent.getOutput(1)]);
+        const carryInputToFirstAdderWire = new WireComponent(carryInputComponent.getSnapPoint("center"), firstAdderComponent.getSnapPoint("input2"), 25, [carryInputComponent.getOutput(0)], carryWireColor);
+        const firstAddderToSecondAdderWire = new WireComponent(firstAdderComponent.getSnapPoint("output1"), secondAdderComponent.getSnapPoint("input2"), 25, [firstAdderComponent.getOutput(1)], carryWireColor);
+        const secondAddderToThirdAdderWire = new WireComponent(secondAdderComponent.getSnapPoint("output1"), thirdAdderComponent.getSnapPoint("input2"), 25, [secondAdderComponent.getOutput(1)], carryWireColor);
+        const thirdAddderToFourthAdderWire = new WireComponent(thirdAdderComponent.getSnapPoint("output1"), fourthAdderComponent.getSnapPoint("input2"), 25, [thirdAdderComponent.getOutput(1)], carryWireColor);
+        const fourthAdderToCarryOutputWire = new WireComponent(fourthAdderComponent.getSnapPoint("output1"), carryOutputComponent.getSnapPoint("left"), 25, [fourthAdderComponent.getOutput(1)], carryWireColor);
 
-        const firstNumberInputDToFirstAdderWire = new WireComponent(firstNumberInputDComponent.getSnapPoint("center"), firstAdderComponent.getSnapPoint("input0"), 25, [firstNumberInputDComponent.getOutput(0)]);
-        const firstNumberInputCToSecondAdderWire = new WireComponent(firstNumberInputCComponent.getSnapPoint("center"), secondAdderComponent.getSnapPoint("input0"), 25, [firstNumberInputCComponent.getOutput(0)]);
-        const firstNumberInputBToThirdAdderWire = new WireComponent(firstNumberInputBComponent.getSnapPoint("center"), thirdAdderComponent.getSnapPoint("input0"), 25, [firstNumberInputBComponent.getOutput(0)]);
-        const firstNumberInputAToFourthAdderWire = new WireComponent(firstNumberInputAComponent.getSnapPoint("center"), fourthAdderComponent.getSnapPoint("input0"), 25, [firstNumberInputAComponent.getOutput(0)]);
+        const firstNumberInputDToFirstAdderWire = new WireComponent(firstNumberInputDComponent.getSnapPoint("center"), firstAdderComponent.getSnapPoint("input0"), 25, [firstNumberInputDComponent.getOutput(0)], firstNumberWireColor);
+        const firstNumberInputCToSecondAdderWire = new WireComponent(firstNumberInputCComponent.getSnapPoint("center"), secondAdderComponent.getSnapPoint("input0"), 25, [firstNumberInputCComponent.getOutput(0)], firstNumberWireColor);
+        const firstNumberInputBToThirdAdderWire = new WireComponent(firstNumberInputBComponent.getSnapPoint("center"), thirdAdderComponent.getSnapPoint("input0"), 25, [firstNumberInputBComponent.getOutput(0)], firstNumberWireColor);
+        const firstNumberInputAToFourthAdderWire = new WireComponent(firstNumberInputAComponent.getSnapPoint("center"), fourthAdderComponent.getSnapPoint("input0"), 25, [firstNumberInputAComponent.getOutput(0)], firstNumberWireColor);
         
-        const secondNumberInputDToFirstAdderWire1 = new WireComponent(secondNumberInputDComponent.getSnapPoint("center"), new Coordinates(firstAdderComponent.getSnapPoint("input1").x + 0.5 * secondNumberToAdderCableCornerOffsetX, firstAdderComponent.getSnapPoint("input1").y + 0.5 * secondNumberToAdderCableCornerOffsetY), 25, [secondNumberInputDComponent.getOutput(0)]);
-        const secondNumberInputDToFirstAdderWire2 = new WireComponent(secondNumberInputDToFirstAdderWire1.getSnapPoint("end"), firstAdderComponent.getSnapPoint("input1"), 25, [secondNumberInputDComponent.getOutput(0)]);
+        const secondNumberInputDToFirstAdderWire1 = new WireComponent(secondNumberInputDComponent.getSnapPoint("center"), new Coordinates(firstAdderComponent.getSnapPoint("input1").x + 0.5 * secondNumberToAdderCableCornerOffsetX, firstAdderComponent.getSnapPoint("input1").y + 0.5 * secondNumberToAdderCableCornerOffsetY), 25, [secondNumberInputDComponent.getOutput(0)], secondNumberWireColor);
+        const secondNumberInputDToFirstAdderWire2 = new WireComponent(secondNumberInputDToFirstAdderWire1.getSnapPoint("end"), firstAdderComponent.getSnapPoint("input1"), 25, [secondNumberInputDComponent.getOutput(0)], secondNumberWireColor);
         
-        const secondNumberInputCToSecondAdderWire1 = new WireComponent(secondNumberInputCComponent.getSnapPoint("center"), new Coordinates(secondAdderComponent.getSnapPoint("input1").x + secondNumberToAdderCableCornerOffsetX, secondAdderComponent.getSnapPoint("input1").y + secondNumberToAdderCableCornerOffsetY), 25, [secondNumberInputCComponent.getOutput(0)]);
-        const secondNumberInputCToSecondAdderWire2 = new WireComponent(secondNumberInputCToSecondAdderWire1.getSnapPoint("end"), secondAdderComponent.getSnapPoint("input1"), 25, [secondNumberInputCComponent.getOutput(0)]);
+        const secondNumberInputCToSecondAdderWire1 = new WireComponent(secondNumberInputCComponent.getSnapPoint("center"), new Coordinates(secondAdderComponent.getSnapPoint("input1").x + secondNumberToAdderCableCornerOffsetX, secondAdderComponent.getSnapPoint("input1").y + secondNumberToAdderCableCornerOffsetY), 25, [secondNumberInputCComponent.getOutput(0)], secondNumberWireColor);
+        const secondNumberInputCToSecondAdderWire2 = new WireComponent(secondNumberInputCToSecondAdderWire1.getSnapPoint("end"), secondAdderComponent.getSnapPoint("input1"), 25, [secondNumberInputCComponent.getOutput(0)], secondNumberWireColor);
 
-        const secondNumberInputBToThirdAdderWire1 = new WireComponent(secondNumberInputBComponent.getSnapPoint("center"), new Coordinates(thirdAdderComponent.getSnapPoint("input1").x + 1.5 * secondNumberToAdderCableCornerOffsetX, thirdAdderComponent.getSnapPoint("input1").y + 2.25 * secondNumberToAdderCableCornerOffsetY), 25, [secondNumberInputBComponent.getOutput(0)]);
-        const secondNumberInputBToThirdAdderWire2 = new WireComponent(secondNumberInputBToThirdAdderWire1.getSnapPoint("end"), thirdAdderComponent.getSnapPoint("input1"), 25, [secondNumberInputBComponent.getOutput(0)]);
+        const secondNumberInputBToThirdAdderWire1 = new WireComponent(secondNumberInputBComponent.getSnapPoint("center"), new Coordinates(thirdAdderComponent.getSnapPoint("input1").x + 1.5 * secondNumberToAdderCableCornerOffsetX, thirdAdderComponent.getSnapPoint("input1").y + 2.25 * secondNumberToAdderCableCornerOffsetY), 25, [secondNumberInputBComponent.getOutput(0)], secondNumberWireColor);
+        const secondNumberInputBToThirdAdderWire2 = new WireComponent(secondNumberInputBToThirdAdderWire1.getSnapPoint("end"), thirdAdderComponent.getSnapPoint("input1"), 25, [secondNumberInputBComponent.getOutput(0)], secondNumberWireColor);
 
-        const secondNumberInputAToFourthAdderWire1 = new WireComponent(secondNumberInputAComponent.getSnapPoint("center"), new Coordinates(fourthAdderComponent.getSnapPoint("input1").x + 2.5 * secondNumberToAdderCableCornerOffsetX, fourthAdderComponent.getSnapPoint("input1").y + 2.5 * secondNumberToAdderCableCornerOffsetY), 25, [secondNumberInputAComponent.getOutput(0)]);
-        const secondNumberInputAToFourthAdderWire2 = new WireComponent(secondNumberInputAToFourthAdderWire1.getSnapPoint("end"), fourthAdderComponent.getSnapPoint("input1"), 25, [secondNumberInputAComponent.getOutput(0)]);
+        const secondNumberInputAToFourthAdderWire1 = new WireComponent(secondNumberInputAComponent.getSnapPoint("center"), new Coordinates(fourthAdderComponent.getSnapPoint("input1").x + 2.5 * secondNumberToAdderCableCornerOffsetX, fourthAdderComponent.getSnapPoint("input1").y + 2.5 * secondNumberToAdderCableCornerOffsetY), 25, [secondNumberInputAComponent.getOutput(0)], secondNumberWireColor);
+        const secondNumberInputAToFourthAdderWire2 = new WireComponent(secondNumberInputAToFourthAdderWire1.getSnapPoint("end"), fourthAdderComponent.getSnapPoint("input1"), 25, [secondNumberInputAComponent.getOutput(0)], secondNumberWireColor);
 
-        const firstAdderToSumOutputDWire1 = new WireComponent(firstAdderComponent.getSnapPoint("output0"), new Coordinates(firstAdderComponent.getSnapPoint("output0").x + 2.5 * adderToSumOutputCableCornerOffsetX, firstAdderComponent.getSnapPoint("output0").y + 2.5 * adderToSumOutputCableCornerOffsetY), 25, [firstAdderComponent.getOutput(0)]);
-        const firstAdderToSumOutputDWire2 = new WireComponent(firstAdderToSumOutputDWire1.getSnapPoint("end"), sumOutputDComponent.getSnapPoint("left"), 25, [firstAdderComponent.getOutput(0)]);
+        const firstAdderToSumOutputDWire1 = new WireComponent(firstAdderComponent.getSnapPoint("output0"), new Coordinates(firstAdderComponent.getSnapPoint("output0").x + 2.5 * adderToSumOutputCableCornerOffsetX, firstAdderComponent.getSnapPoint("output0").y + 2.5 * adderToSumOutputCableCornerOffsetY), 25, [firstAdderComponent.getOutput(0)], outputWireColor);
+        const firstAdderToSumOutputDWire2 = new WireComponent(firstAdderToSumOutputDWire1.getSnapPoint("end"), sumOutputDComponent.getSnapPoint("left"), 25, [firstAdderComponent.getOutput(0)], outputWireColor);
 
-        const secondAdderToSumOutputCWire1 = new WireComponent(secondAdderComponent.getSnapPoint("output0"), new Coordinates(secondAdderComponent.getSnapPoint("output0").x + 2 * adderToSumOutputCableCornerOffsetX, secondAdderComponent.getSnapPoint("output0").y + 2 * adderToSumOutputCableCornerOffsetY), 25, [secondAdderComponent.getOutput(0)]);
-        const secondAdderToSumOutputCWire2 = new WireComponent(secondAdderToSumOutputCWire1.getSnapPoint("end"), sumOutputCComponent.getSnapPoint("left"), 25, [secondAdderComponent.getOutput(0)]);
+        const secondAdderToSumOutputCWire1 = new WireComponent(secondAdderComponent.getSnapPoint("output0"), new Coordinates(secondAdderComponent.getSnapPoint("output0").x + 2 * adderToSumOutputCableCornerOffsetX, secondAdderComponent.getSnapPoint("output0").y + 2 * adderToSumOutputCableCornerOffsetY), 25, [secondAdderComponent.getOutput(0)], outputWireColor);
+        const secondAdderToSumOutputCWire2 = new WireComponent(secondAdderToSumOutputCWire1.getSnapPoint("end"), sumOutputCComponent.getSnapPoint("left"), 25, [secondAdderComponent.getOutput(0)], outputWireColor);
 
-        const thirdAdderToSumOutputBWire1 = new WireComponent(thirdAdderComponent.getSnapPoint("output0"), new Coordinates(thirdAdderComponent.getSnapPoint("output0").x + 1.5 * adderToSumOutputCableCornerOffsetX, thirdAdderComponent.getSnapPoint("output0").y + 1.5 * adderToSumOutputCableCornerOffsetY), 25, [thirdAdderComponent.getOutput(0)]);
-        const thirdAdderToSumOutputBWire2 = new WireComponent(thirdAdderToSumOutputBWire1.getSnapPoint("end"), sumOutputBComponent.getSnapPoint("left"), 25, [thirdAdderComponent.getOutput(0)]);
+        const thirdAdderToSumOutputBWire1 = new WireComponent(thirdAdderComponent.getSnapPoint("output0"), new Coordinates(thirdAdderComponent.getSnapPoint("output0").x + 1.5 * adderToSumOutputCableCornerOffsetX, thirdAdderComponent.getSnapPoint("output0").y + 1.5 * adderToSumOutputCableCornerOffsetY), 25, [thirdAdderComponent.getOutput(0)], outputWireColor);
+        const thirdAdderToSumOutputBWire2 = new WireComponent(thirdAdderToSumOutputBWire1.getSnapPoint("end"), sumOutputBComponent.getSnapPoint("left"), 25, [thirdAdderComponent.getOutput(0)], outputWireColor);
 
-        const fourthAdderToSumOutputAWire1 = new WireComponent(fourthAdderComponent.getSnapPoint("output0"), new Coordinates(fourthAdderComponent.getSnapPoint("output0").x + 0.5 * adderToSumOutputCableCornerOffsetX, fourthAdderComponent.getSnapPoint("output0").y + 0.5 * adderToSumOutputCableCornerOffsetY), 25, [fourthAdderComponent.getOutput(0)]);
-        const fourthAdderToSumOutputAWire2 = new WireComponent(fourthAdderToSumOutputAWire1.getSnapPoint("end"), sumOutputAComponent.getSnapPoint("left"), 25, [fourthAdderComponent.getOutput(0)]);
+        const fourthAdderToSumOutputAWire1 = new WireComponent(fourthAdderComponent.getSnapPoint("output0"), new Coordinates(fourthAdderComponent.getSnapPoint("output0").x + 0.5 * adderToSumOutputCableCornerOffsetX, fourthAdderComponent.getSnapPoint("output0").y + 0.5 * adderToSumOutputCableCornerOffsetY), 25, [fourthAdderComponent.getOutput(0)], outputWireColor);
+        const fourthAdderToSumOutputAWire2 = new WireComponent(fourthAdderToSumOutputAWire1.getSnapPoint("end"), sumOutputAComponent.getSnapPoint("left"), 25, [fourthAdderComponent.getOutput(0)], outputWireColor);
 
         //Labels
         const firstNumberLabel = new DynamicNumberLabelComponent(new Coordinates(firstNumberInputAComponent.getSnapPoint("left").x, (firstNumberInputAComponent.getSnapPoint("center").y) - 190), 120, [firstNumberInputAComponent.getOutput(0), firstNumberInputBComponent.getOutput(0), firstNumberInputCComponent.getOutput(0), firstNumberInputDComponent.getOutput(0)]);
