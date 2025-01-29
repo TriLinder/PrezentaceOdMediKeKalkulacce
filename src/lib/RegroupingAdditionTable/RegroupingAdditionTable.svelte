@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { generateCarryRowString } from "./utils";
     import RegroupingAdditionTableRow from "./RegroupingAdditionTableRow.svelte";
     
     export let firstNumber: number;
@@ -10,36 +11,7 @@
     $: firstNumberString = firstNumber.toString(numeralSystemBase);
     $: secondNumberString = secondNumber.toString(numeralSystemBase);
     $: resultString = result.toString(numeralSystemBase);
-    $: carryRowString = generateCarryRowString(firstNumberString, secondNumberString);
-
-    function generateCarryRowString(firstNumberString: string, secondNumberString: string): string {
-        const numberOfDigits = Math.max(firstNumberString.length, secondNumberString.length);
-        
-        const paddedFirstNumber = firstNumberString.padStart(numberOfDigits, "0");
-        const paddedSecondNumber = secondNumberString.padStart(numberOfDigits, "0");
-
-        let carryRowString = "";
-        let carry = 0;
-
-        for (let digitIndex = numberOfDigits - 1; digitIndex >= 0; digitIndex--) {
-            carryRowString = String(carry) + carryRowString;
-
-            const digitSum = carry + Number(paddedFirstNumber[digitIndex]) + Number(paddedSecondNumber[digitIndex]);
-
-            if (digitSum >= numeralSystemBase) {
-                carry = Math.floor(digitSum / numeralSystemBase);
-            }
-            else {
-                carry = 0;
-            }
-        }
-
-        if (carry != 0) {
-            carryRowString = String(carry) + carryRowString;
-        }
-
-        return carryRowString;
-    }
+    $: carryRowString = generateCarryRowString(firstNumberString, secondNumberString, numeralSystemBase);
 </script>
 
 <table>

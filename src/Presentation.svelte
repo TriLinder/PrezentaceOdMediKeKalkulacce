@@ -3,7 +3,6 @@
 
     import Configuration from './slides/configuration/Configuration.svelte';
     import Blank from './slides/general/Blank.svelte';
-    import H2Slide from './slides/general/H2Slide.svelte';
     import Expectations from './slides/expectations/Expectations.svelte';
     import LogicGatesIntroduction from './slides/logic-gates-introduction/LogicGatesIntroduction.svelte';
     import Counting from './slides/counting/Counting.svelte';
@@ -14,7 +13,12 @@
 <Configuration/>
 
 <Blank/>
-<H2Slide content={$_("presentationTitle")}/>
+
+<section>
+    <!-- Title slide -->
+    <h2>{$_("presentationTitle")}</h2>
+    <span>Jakub Hlaváček</span>
+</section>
 
 <Expectations/>
 <LogicGatesIntroduction/>

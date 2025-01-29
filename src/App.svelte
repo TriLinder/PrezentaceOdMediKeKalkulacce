@@ -33,6 +33,24 @@
 
     polyfillCountryFlagEmojis();
 
+
+    // confetti key
+    import confetti from 'canvas-confetti';
+    
+    document.addEventListener("keydown", function(e) {
+        if (e.key == "c") {
+            confetti({
+                disableForReducedMotion: false,
+                particleCount: 1400,
+                decay: 0.95,
+                spread: 360,
+                origin: {
+                    x: 0.5,
+                    y: 0.5
+                }
+            })
+        }
+    });
 </script>
 
 <svelte:head>
