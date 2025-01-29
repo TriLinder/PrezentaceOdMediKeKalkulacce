@@ -14,7 +14,7 @@ You can choose between the two languages before starting the presentation, altho
 
 ## What's it about?
 
-The goal of this presentation is to demonstrate how to construct logic gates using simple electronic components and then combine them to create a basic 4-bit adder, while explaining the underlying logic. It also features an interactive simulation of the components.
+The goal of this presentation is to demonstrate how to construct logic gates using simple electronic components and then combine them to create a basic 4-bit adder, while explaining the underlying logic. It also features an interactive simulation of the components. The concept is heavily inspired by [this amazing video](https://www.youtube.com/watch?v=QZwneRb-zqA) by Sebastian Lague.
 
 ## Screenshots
 
@@ -29,10 +29,6 @@ The goal of this presentation is to demonstrate how to construct logic gates usi
 ![A binary counter](./README_ASSETS/screenshots/binary_counter.png)
 
 ## Running the presentation
-
-Unfortunately, because of its interactive nature, running the presentation requires a few steps beyond simply opening a PowerPoint file.
-
-You can either:
 
 ### A. Run from a release
 
@@ -52,6 +48,4 @@ You can either:
 
 4. Open the site in your browser
 
-
-
-This presentation is confirmed to work with Firefox `v113.0.0` and Chromium `v113.0.5672.126`.
+This presentation is confirmed to work with Firefox `v134.0.2` and Chromium `v132.0.6834.110`.
